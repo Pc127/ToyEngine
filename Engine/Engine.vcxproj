@@ -33,7 +33,6 @@
     <ClInclude Include="ObjectList.h" />
     <ClInclude Include="physics\PhysicsClass.h" />
     <ClInclude Include="system\InputClass.h" />
-    <ClInclude Include="system\ObjectClass.h" />
     <ClInclude Include="system\SystemClass.h" />
     <ClInclude Include="system\TimerClass.h" />
   </ItemGroup>
@@ -53,7 +52,6 @@
     <ClCompile Include="ObjectList.cpp" />
     <ClCompile Include="system\InputClass.cpp" />
     <ClCompile Include="system\Main.cpp" />
-    <ClCompile Include="system\ObjectClass.cpp" />
     <ClCompile Include="system\SystemClass.cpp" />
     <ClCompile Include="system\TimerClass.cpp" />
   </ItemGroup>
