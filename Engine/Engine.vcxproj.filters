@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\gameobject">
+      <UniqueIdentifier>{210fb017-a174-4e25-bb2c-33793e0bf3a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\graphics">
+      <UniqueIdentifier>{a97c6ffa-7d31-4083-9cf3-7b2edd244367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\physics">
+      <UniqueIdentifier>{500e894e-dbaa-4c18-b3c0-3670e1d1aba9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\data">
+      <UniqueIdentifier>{15fa5242-fc6e-447a-a68c-48dcee8ef08f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\shader">
+      <UniqueIdentifier>{7998a311-dd0e-4cde-bf86-74b855ca2eaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\system">
+      <UniqueIdentifier>{b813d223-2b8a-4fee-8712-962b95582cb5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="system\ObjectClass.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="system\SystemClass.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="system\TimerClass.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="system\InputClass.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="physics\PhysicsClass.h">
+      <Filter>Header Files\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\GraphicsClass.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\LightClass.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\LightShaderClass.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\ModelClass.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\TextureClass.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\TextureShaderClass.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\CameraClass.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\CartoonShaderClass.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\ColorShaderClass.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\D3DClass.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobject\ObjectClass.h">
+      <Filter>Header Files\gameobject</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="system\SystemClass.cpp">
+      <Filter>Header Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="system\TimerClass.cpp">
+      <Filter>Header Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="system\InputClass.cpp">
+      <Filter>Header Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="system\Main.cpp">
+      <Filter>Header Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="system\ObjectClass.cpp">
+      <Filter>Header Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="physics\PhysicsClass.cpp">
+      <Filter>Header Files\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\GraphicsClass.cpp">
+      <Filter>Header Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\LightClass.cpp">
+      <Filter>Header Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\LightShaderClass.cpp">
+      <Filter>Header Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\ModelClass.cpp">
+      <Filter>Header Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\TextureClass.cpp">
+      <Filter>Header Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\TextureShaderClass.cpp">
+      <Filter>Header Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\CartoonShaderClass.cpp">
+      <Filter>Header Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\ColorShaderClass.cpp">
+      <Filter>Header Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\D3DClass.cpp">
+      <Filter>Header Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobject\ObjectClass.cpp">
+      <Filter>Header Files\gameobject</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\CameraClass.cpp">
+      <Filter>Header Files\graphics</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader\light.vs">
+      <Filter>Header Files\shader</Filter>
+    </None>
+    <None Include="shader\texture.ps">
+      <Filter>Header Files\shader</Filter>
+    </None>
+    <None Include="shader\texture.vs">
+      <Filter>Header Files\shader</Filter>
+    </None>
+    <None Include="shader\cartoon.ps">
+      <Filter>Header Files\shader</Filter>
+    </None>
+    <None Include="shader\cartoon.vs">
+      <Filter>Header Files\shader</Filter>
+    </None>
+    <None Include="shader\color.ps">
+      <Filter>Header Files\shader</Filter>
+    </None>
+    <None Include="shader\color.vs">
+      <Filter>Header Files\shader</Filter>
+    </None>
+    <None Include="shader\light.ps">
+      <Filter>Header Files\shader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="data\Ball3.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball4.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball5.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball6.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball7.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball8.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball9.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball10.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball11.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball12.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball13.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball14.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball15.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball16.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\seafloor.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball1.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+    <Image Include="data\Ball2.dds">
+      <Filter>Header Files\data</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\cube.txt">
+      <Filter>Header Files\data</Filter>
+    </Text>
+    <Text Include="data\ball.txt">
+      <Filter>Header Files\data</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
