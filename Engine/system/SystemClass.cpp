@@ -15,21 +15,40 @@ bool SystemClass::Initialize()
 	screenWidth = 0;
 
 	InitializeWindows(screenWidth, screenHeight);
+
+	// 输入输出模块
 	m_Input = new InputClass;
 	if (!m_Input) {
 		return false;
 	}
 	m_Input->Initialize();
 
+	// 图形模型
 	m_Graphics = new GraphicsClass;
 	if (!m_Graphics) {
 		return false;
 	}
-
 	bool result = m_Graphics->Initialize(screenWidth, screenHeight, m_hwnd);
 	if (!result) {
 		return false;
 	}
+
+	// 物理模块
+	m_Physics = new PhysicsClass;
+	if (!m_Physics) {
+		return false;
+	}
+	result = m_Physics->Initialize();
+	if (!result) {
+		return false;
+	}
+
+	// 计时器模块
+	m_Timer = new TimerClass;
+	if (!m_Timer) {
+		return false;
+	}
+	m_Timer->Initialize();
 
 	return true;
 }

@@ -30,6 +30,7 @@
     <ClInclude Include="graphics\ModelClass.h" />
     <ClInclude Include="graphics\TextureClass.h" />
     <ClInclude Include="graphics\TextureShaderClass.h" />
+    <ClInclude Include="ObjectList.h" />
     <ClInclude Include="physics\PhysicsClass.h" />
     <ClInclude Include="system\InputClass.h" />
     <ClInclude Include="system\ObjectClass.h" />
@@ -49,6 +50,7 @@
     <ClCompile Include="graphics\TextureClass.cpp" />
     <ClCompile Include="graphics\TextureShaderClass.cpp" />
     <ClCompile Include="physics\PhysicsClass.cpp" />
+    <ClCompile Include="ObjectList.cpp" />
     <ClCompile Include="system\InputClass.cpp" />
     <ClCompile Include="system\Main.cpp" />
     <ClCompile Include="system\ObjectClass.cpp" />
@@ -139,7 +141,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\xieshiheng\Documents\Visual Studio 2015\Projects\Engine\Engine\graphics;C:\Users\xieshiheng\Documents\Visual Studio 2015\Projects\Engine\Engine\gameobject;C:\Users\xieshiheng\Documents\Visual Studio 2015\Projects\Engine\Engine\system;C:\Users\xieshiheng\Documents\Visual Studio 2015\Projects\Engine\Engine\physics;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\Engine\Engine\graphics;..\..\Engine\Engine\gameobject;..\..\Engine\Engine\system;..\..\Engine\Engine\physics;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

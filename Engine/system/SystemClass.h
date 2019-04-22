@@ -1,6 +1,8 @@
 ﻿#pragma once
 #include "GraphicsClass.h"
 #include "InputClass.h"
+#include "TimerClass.h"
+#include "PhysicsClass.h"
 #include <windows.h>
 // 排除一些较少使用的win32API
 #ifndef  _SYSTEMCLASS_H_
@@ -36,6 +38,8 @@ private:
 
 	InputClass* m_Input;
 	GraphicsClass* m_Graphics;
+	TimerClass* m_Timer;
+	PhysicsClass* m_Physics;
 };
 
 
