@@ -50,6 +50,10 @@ bool SystemClass::Initialize()
 	}
 	m_Timer->Initialize();
 
+	//gameplay
+	BallOne *ball = new BallOne;
+	//BallOne::ballone.Initialize();
+
 	return true;
 }
 

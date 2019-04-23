@@ -23,6 +23,7 @@
     <ClInclude Include="gameobject\GameObjectListClass.h" />
     <ClInclude Include="gameobject\ObjectClass.h" />
     <ClInclude Include="gameobject\ObjectListClass.h" />
+    <ClInclude Include="gameplay\BallOne.h" />
     <ClInclude Include="graphics\CameraClass.h" />
     <ClInclude Include="graphics\CartoonShaderClass.h" />
     <ClInclude Include="graphics\ColorShaderClass.h" />
@@ -47,6 +48,7 @@
     <ClCompile Include="gameobject\GameObjectListClass.cpp" />
     <ClCompile Include="gameobject\ObjectClass.cpp" />
     <ClCompile Include="gameobject\ObjectListClass.cpp" />
+    <ClCompile Include="gameplay\BallOne.cpp" />
     <ClCompile Include="graphics\CameraClass.cpp" />
     <ClCompile Include="graphics\CartoonShaderClass.cpp" />
     <ClCompile Include="graphics\ColorShaderClass.cpp" />
@@ -151,7 +153,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\..\Engine\Engine\graphics;..\..\Engine\Engine\gameobject;..\..\Engine\Engine\system;..\..\Engine\Engine\physics;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\Engine\Engine\gameplay;..\..\Engine\Engine\graphics;..\..\Engine\Engine\gameobject;..\..\Engine\Engine\system;..\..\Engine\Engine\physics;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

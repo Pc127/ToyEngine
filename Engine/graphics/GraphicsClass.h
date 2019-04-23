@@ -9,8 +9,11 @@
 #include "LightShaderClass.h"
 #include "PhysicsClass.h"
 #include "CartoonShaderClass.h"
+#include "GraphicsComponentClass.h"
+#include "GameObjectListClass.h"
+#include "GameObjectClass.h"
 
-const bool FULL_SCREEN = true;
+const bool FULL_SCREEN = false;
 const bool VSYNC_ENABLED = true;
 const float SCREEN_DEPTH = 1000.0f;
 const float SCREEN_NEAR = 0.1f;
@@ -29,8 +32,6 @@ private:
 	bool Render();
 	D3DClass* m_D3D;
 	CameraClass* m_Camera;
-	ModelClass* m_Model;
-	unsigned int m_MoelCount;
 
 	// 渲染正面用LightShader
 	LightShaderClass* m_LightShader;
@@ -38,11 +39,4 @@ private:
 
 	// 渲染背面用CartoonShader
 	CartoonShaderClass* m_CartoonShader;
-
-	// 物理系统
-	PhysicsClass* m_physics;
-
-	// 纹理模块
-	TextureClass* m_Texture;
-
 };

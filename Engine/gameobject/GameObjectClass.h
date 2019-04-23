@@ -15,7 +15,7 @@ public:
 	virtual bool Frame() = 0;
 	virtual void Shutdown() = 0;
 
-private:
+public:
 	// 是否被激活
 	bool active;
 

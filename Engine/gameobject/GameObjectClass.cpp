@@ -21,6 +21,7 @@ bool GameObjectClass::Register()
 
 bool GameObjectClass::Initialize()
 {
+	return true;
 }
 
 void GameObjectClass::Shutdown()

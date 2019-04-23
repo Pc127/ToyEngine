@@ -4,7 +4,6 @@ GraphicsClass::GraphicsClass()
 {
 	m_D3D = 0;
 	m_Camera = 0;
-	m_Model = 0;
 
 	m_LightShader = 0;
 	m_Light = 0;
@@ -30,38 +29,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	if (!m_Camera) {
 		return false;
 	}
-	m_Camera->SetPosition(0.0f, 0.0f, -15.0f);
-
-	// 模型模块
-	m_MoelCount = 1;
-	m_Model = new ModelClass[m_MoelCount];
-	if (!m_Model) {
-		return false;
-	}
-	// result = m_Model[0].Initialize(m_D3D->GetDevice(), "../Engine/data/cube.txt");
-	result = m_Model[0].Initialize(m_D3D->GetDevice(), "../Engine/data/ball.txt");
-	if (!result) {
-		MessageBox(hwnd, L"Could not initialize the model object", L"Error", MB_OK);
-		return false;
-	}
-
-	// 纹理模块
-	m_Texture = new TextureClass[3];
-	if (!m_Texture) {
-		return false;
-	}
-	result = m_Texture[0].Initialize(m_D3D->GetDevice(), L"../Engine/data/Ball1.dds");
-	if (!result) {
-		return false;
-	}
-	result = m_Texture[1].Initialize(m_D3D->GetDevice(), L"../Engine/data/Ball2.dds");
-	if (!result) {
-		return false;
-	}
-	result = m_Texture[2].Initialize(m_D3D->GetDevice(), L"../Engine/data/Ball3.dds");
-	if (!result) {
-		return false;
-	}
+	m_Camera->SetPosition(0.0f, 0.0f, -10.0f);
 
 	// 着色器模块
 	// 光照着色器
@@ -98,12 +66,10 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 		return false;
 	}
 
-	// 物理模块
-	m_physics = new PhysicsClass;
-	if (!m_physics) {
-		return false;
-	}
-	m_physics->Initialize();
+	// 纹理与模型的单例模块 
+	ModelMapClass::GetSingleton()->Initialize(m_D3D->GetDevice());
+	TextureMapClass::GetSingleton()->Initialize(m_D3D->GetDevice());
+
 	return true;
 }
 
@@ -129,13 +95,6 @@ void GraphicsClass::Shutdown()
 		m_Light = 0;
 	}
 
-	if (m_Model)
-	{
-		m_Model->Shutdown();
-		delete[] m_Model;
-		m_Model = 0;
-	}
-
 	if (m_Camera)
 	{
 		delete m_Camera;
@@ -145,10 +104,6 @@ void GraphicsClass::Shutdown()
 		m_D3D->Shutdown();
 		delete m_D3D;
 		m_D3D = 0;
-	}
-	if (m_Texture) {
-		m_Texture->Shutdown();
-		m_Texture = 0;
 	}
 	return;
 }
@@ -179,36 +134,34 @@ bool GraphicsClass::Render()
 	m_D3D->GetWorldMatrix(worldMatrix);
 	m_D3D->GetProjectionMatrix(projectionMatrix);
 
+	
 	// 进行物理系统的更新
-	m_physics->Frame();
+	// m_physics->Frame();
 
 	// 模型准备数据
-	for (int j = 0; j < m_MoelCount; j++) {
-		m_Model[j].Render(m_D3D->GetDeviceContext());
+ 	for (GameObjectClass* gameobject : GameObjectListClass::GetSingleton()->m_GameObjects) {
+		if (gameobject->active && gameobject->m_GraphicsComponent) {
 
-		for (int i = 0; i < m_physics->GetObjCount(); i++) {
-			if (m_physics->GetModelIndex(i) != j)
-				continue;
+			GraphicsComponentClass* gc = gameobject->m_GraphicsComponent;
 
+			gc->m_Model->Render(m_D3D->GetDeviceContext());
 			// 渲染正面
 			m_D3D->RenderFront();
-			m_physics->GetWorldMatrix(worldMatrix, i);
-			result = m_LightShader->Render(m_D3D->GetDeviceContext(), m_Model[j].GetIndexCount(),
-				worldMatrix, viewMatrix, projectionMatrix, m_Texture[m_physics->GetTextureIndex(i)].GetTexture(), m_Light->GetDirection(),m_Light->GetAmbientColor(), m_Light->GetDiffuseColor(),
-				m_Camera->GetPosition(),m_Light->GetSpecularColor(),m_Light->GetSpecularPower());
+			result = m_LightShader->Render(m_D3D->GetDeviceContext(), gc->m_Model->GetIndexCount(),
+				worldMatrix, viewMatrix, projectionMatrix, gc->m_Texture, m_Light->GetDirection(), m_Light->GetAmbientColor(), m_Light->GetDiffuseColor(),
+				m_Camera->GetPosition(), m_Light->GetSpecularColor(), m_Light->GetSpecularPower());
 			if (!result) {
 				return false;
 			}
 
 			// 渲染背面
 			m_D3D->RenderBack();
-			m_physics->GetWorldMatrix(worldMatrix, i);
-			result = m_CartoonShader->Render(m_D3D->GetDeviceContext(), m_Model[j].GetIndexCount(),
+			result = m_CartoonShader->Render(m_D3D->GetDeviceContext(), gc->m_Model->GetIndexCount(),
 				worldMatrix, viewMatrix, projectionMatrix);
 			if (!result) {
 				return false;
 			}
-					
+			
 		}
 	}
 

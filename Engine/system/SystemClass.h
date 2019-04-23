@@ -9,6 +9,9 @@
 #define _SYSTEMCLASS_H_
 #endif // ! _SYSTEMCLASS_H_
 
+// gameplay
+#include "BallOne.h"
+
 #define WIN32_LEAN_AND_MEAN
 
 

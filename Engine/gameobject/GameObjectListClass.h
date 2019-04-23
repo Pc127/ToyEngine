@@ -15,8 +15,8 @@ public:
 
 	bool Insert(GameObjectClass*);
 
+	vector<GameObjectClass*> m_GameObjects;
+
 private:
 	GameObjectListClass();
-	
-	vector<GameObjectClass*> m_GameObjects;
 };

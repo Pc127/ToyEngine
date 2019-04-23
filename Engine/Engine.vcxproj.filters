@@ -23,6 +23,9 @@
     <Filter Include="Source\system">
       <UniqueIdentifier>{b813d223-2b8a-4fee-8712-962b95582cb5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\gameplay">
+      <UniqueIdentifier>{902eca2b-21d9-4626-ad11-030624fde3f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="system\SystemClass.h">
@@ -90,6 +93,9 @@
     </ClInclude>
     <ClInclude Include="gameobject\GameObjectListClass.h">
       <Filter>Source\gameobject</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\BallOne.h">
+      <Filter>Source\gameplay</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +167,9 @@
     </ClCompile>
     <ClCompile Include="gameobject\GameObjectListClass.cpp">
       <Filter>Source\gameobject</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\BallOne.cpp">
+      <Filter>Source\gameplay</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

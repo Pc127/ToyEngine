@@ -18,7 +18,7 @@ public:
 
 	bool Initialize(char*, WCHAR*);
 	void Shutdown();
-private:
+public:
 	ModelClass* m_Model;
 	ID3D11ShaderResourceView* m_Texture;
 };
