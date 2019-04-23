@@ -11,9 +11,12 @@ public:
 
 	bool Register();
 
+	// 会在这里new出适用的组件
 	virtual bool Initialize() = 0;
 	virtual bool Frame() = 0;
-	virtual void Shutdown() = 0;
+
+	// 会调用两个组件的shutdown函数
+	void Shutdown();
 
 public:
 	// 是否被激活

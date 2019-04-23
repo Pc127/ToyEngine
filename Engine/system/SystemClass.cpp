@@ -50,9 +50,9 @@ bool SystemClass::Initialize()
 	}
 	m_Timer->Initialize();
 
-	//gameplay
-	BallOne *ball = new BallOne;
-	//BallOne::ballone.Initialize();
+	// 游戏场景
+	m_GameScene = new SceneOne;
+	m_GameScene->Initialize();
 
 	return true;
 }
@@ -95,6 +95,12 @@ void SystemClass::Shutdown()
 	if (m_Input) {
 		delete m_Input;
 		m_Input = 0;
+	}
+
+	if (m_GameScene) {
+		m_GameScene->Shutdown();
+		delete m_GameScene;
+		m_GameScene = 0;
 	}
 
 	ShutdownWindows();

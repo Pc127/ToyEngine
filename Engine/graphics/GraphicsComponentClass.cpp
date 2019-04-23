@@ -17,4 +17,6 @@ bool GraphicsComponentClass::Initialize(char* modelname, WCHAR* texturename)
 
 void GraphicsComponentClass::Shutdown()
 {
+	// 不做任何操作
+	// 资源 由两个map进行释放
 }

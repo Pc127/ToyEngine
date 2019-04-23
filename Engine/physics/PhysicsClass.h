@@ -1,7 +1,5 @@
 ﻿#pragma once
 #include <D3DX10math.h>
-#include "TimerClass.h"
-#include "ObjectClass.h"
 
 class PhysicsClass
 {
@@ -25,7 +23,5 @@ public:
 	// 进行碰撞检测
 	bool CollisionDetect();
 private:
-	TimerClass *m_timer;
-	ObjectClass *m_obj;
 	unsigned int m_objNum;
 };

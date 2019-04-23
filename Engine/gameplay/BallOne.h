@@ -8,6 +8,5 @@ public:
 	~BallOne();
 	virtual bool Initialize() override;
 	virtual bool Frame() override;
-	virtual void Shutdown() override;
 };
 

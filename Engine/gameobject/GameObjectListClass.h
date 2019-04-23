@@ -1,5 +1,4 @@
-#pragma once
-#include "ObjectClass.h"
+﻿#pragma once
 
 #include <map>
 #include <vector>
@@ -8,6 +7,7 @@ using namespace std;
 
 class GameObjectClass;
 
+// 仅仅作为中介者 不创建 或者 销毁gameobject
 class GameObjectListClass {
 public:
 	static GameObjectListClass* GetSingleton();

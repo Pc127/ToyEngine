@@ -14,17 +14,20 @@
     <Filter Include="Source\physics">
       <UniqueIdentifier>{500e894e-dbaa-4c18-b3c0-3670e1d1aba9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\data">
-      <UniqueIdentifier>{15fa5242-fc6e-447a-a68c-48dcee8ef08f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\shader">
-      <UniqueIdentifier>{7998a311-dd0e-4cde-bf86-74b855ca2eaa}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\system">
       <UniqueIdentifier>{b813d223-2b8a-4fee-8712-962b95582cb5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\gameplay">
       <UniqueIdentifier>{902eca2b-21d9-4626-ad11-030624fde3f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{57b70e9e-3e10-4510-abf0-03651d34c083}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\data">
+      <UniqueIdentifier>{15fa5242-fc6e-447a-a68c-48dcee8ef08f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\shader">
+      <UniqueIdentifier>{7998a311-dd0e-4cde-bf86-74b855ca2eaa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -70,12 +73,6 @@
     <ClInclude Include="graphics\D3DClass.h">
       <Filter>Source\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="gameobject\ObjectClass.h">
-      <Filter>Source\gameobject</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobject\ObjectListClass.h">
-      <Filter>Source\gameobject</Filter>
-    </ClInclude>
     <ClInclude Include="graphics\GraphicsComponentClass.h">
       <Filter>Source\graphics</Filter>
     </ClInclude>
@@ -95,6 +92,12 @@
       <Filter>Source\gameobject</Filter>
     </ClInclude>
     <ClInclude Include="gameplay\BallOne.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobject\GameSceneClass.h">
+      <Filter>Source\gameobject</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\SceneOne.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
   </ItemGroup>
@@ -141,14 +144,8 @@
     <ClCompile Include="graphics\D3DClass.cpp">
       <Filter>Source\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="gameobject\ObjectClass.cpp">
-      <Filter>Source\gameobject</Filter>
-    </ClCompile>
     <ClCompile Include="graphics\CameraClass.cpp">
       <Filter>Source\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="gameobject\ObjectListClass.cpp">
-      <Filter>Source\gameobject</Filter>
     </ClCompile>
     <ClCompile Include="graphics\GraphicsComponentClass.cpp">
       <Filter>Source\graphics</Filter>
@@ -171,92 +168,98 @@
     <ClCompile Include="gameplay\BallOne.cpp">
       <Filter>Source\gameplay</Filter>
     </ClCompile>
+    <ClCompile Include="gameobject\GameSceneClass.cpp">
+      <Filter>Source\gameobject</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\SceneOne.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader\light.vs">
-      <Filter>Source\shader</Filter>
+      <Filter>Resource\shader</Filter>
     </None>
     <None Include="shader\texture.ps">
-      <Filter>Source\shader</Filter>
+      <Filter>Resource\shader</Filter>
     </None>
     <None Include="shader\texture.vs">
-      <Filter>Source\shader</Filter>
+      <Filter>Resource\shader</Filter>
     </None>
     <None Include="shader\cartoon.ps">
-      <Filter>Source\shader</Filter>
+      <Filter>Resource\shader</Filter>
     </None>
     <None Include="shader\cartoon.vs">
-      <Filter>Source\shader</Filter>
+      <Filter>Resource\shader</Filter>
     </None>
     <None Include="shader\color.ps">
-      <Filter>Source\shader</Filter>
+      <Filter>Resource\shader</Filter>
     </None>
     <None Include="shader\color.vs">
-      <Filter>Source\shader</Filter>
+      <Filter>Resource\shader</Filter>
     </None>
     <None Include="shader\light.ps">
-      <Filter>Source\shader</Filter>
+      <Filter>Resource\shader</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\Ball3.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball4.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball5.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball6.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball7.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball8.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball9.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball10.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball11.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball12.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball13.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball14.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball15.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball16.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\seafloor.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball1.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
     <Image Include="data\Ball2.dds">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\cube.txt">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Text>
     <Text Include="data\ball.txt">
-      <Filter>Source\data</Filter>
+      <Filter>Resource\data</Filter>
     </Text>
   </ItemGroup>
 </Project>

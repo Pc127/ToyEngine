@@ -33,7 +33,3 @@ bool BallOne::Frame()
 {
 	return false;
 }
-
-void BallOne::Shutdown()
-{
-}
