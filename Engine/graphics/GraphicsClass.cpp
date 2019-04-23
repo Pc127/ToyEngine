@@ -157,19 +157,15 @@ bool GraphicsClass::Frame()
 {
 	bool result;
 	// 设置旋转
-	static float rotation = 0.0f;
-	rotation += (float)D3DX_PI*0.01f;
-	if (rotation > 360.0f) {
-		rotation -= 360.0f;
-	}
-	result = Render(rotation);
+
+	result = Render();
 	if (!result) {
 		return false;
 	}
 	return true;
 }
 
-bool GraphicsClass::Render(float rotation)
+bool GraphicsClass::Render()
 {
 	D3DXMATRIX viewMatrix, projectionMatrix, worldMatrix;
 	bool result;
@@ -182,9 +178,6 @@ bool GraphicsClass::Render(float rotation)
 	// 从dxd设置世界与投影矩阵
 	m_D3D->GetWorldMatrix(worldMatrix);
 	m_D3D->GetProjectionMatrix(projectionMatrix);
-
-	// 通过旋转矩阵，对世界矩阵进行旋转
-    //D3DXMatrixRotationY(&worldMatrix, rotation);
 
 	// 进行物理系统的更新
 	m_physics->Frame();

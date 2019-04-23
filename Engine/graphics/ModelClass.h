@@ -34,8 +34,6 @@ public:
 	void Render(ID3D11DeviceContext*);
 
 	int GetIndexCount();
-
-	ID3D11ShaderResourceView* GetTexture();
 private:
 	bool InitializeBuffers(ID3D11Device*);
 	void ShutdownBuffers();

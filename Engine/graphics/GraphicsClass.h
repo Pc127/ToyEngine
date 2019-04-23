@@ -26,16 +26,17 @@ public:
 	void Shutdown();
 	bool Frame();
 private:
-	bool Render(float);
+	bool Render();
 	D3DClass* m_D3D;
 	CameraClass* m_Camera;
 	ModelClass* m_Model;
 	unsigned int m_MoelCount;
 
-	// TextureShaderClass* m_TextureShader;
+	// 渲染正面用LightShader
 	LightShaderClass* m_LightShader;
 	LightClass* m_Light;
 
+	// 渲染背面用CartoonShader
 	CartoonShaderClass* m_CartoonShader;
 
 	// 物理系统

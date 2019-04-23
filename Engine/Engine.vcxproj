@@ -19,37 +19,49 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gameobject\GameObjectClass.h" />
+    <ClInclude Include="gameobject\GameObjectListClass.h" />
     <ClInclude Include="gameobject\ObjectClass.h" />
+    <ClInclude Include="gameobject\ObjectListClass.h" />
     <ClInclude Include="graphics\CameraClass.h" />
     <ClInclude Include="graphics\CartoonShaderClass.h" />
     <ClInclude Include="graphics\ColorShaderClass.h" />
     <ClInclude Include="graphics\D3DClass.h" />
     <ClInclude Include="graphics\GraphicsClass.h" />
+    <ClInclude Include="graphics\GraphicsComponentClass.h" />
     <ClInclude Include="graphics\LightClass.h" />
     <ClInclude Include="graphics\LightShaderClass.h" />
     <ClInclude Include="graphics\ModelClass.h" />
+    <ClInclude Include="graphics\ModelMapClass.h" />
     <ClInclude Include="graphics\TextureClass.h" />
+    <ClInclude Include="graphics\TextureMapClass.h" />
     <ClInclude Include="graphics\TextureShaderClass.h" />
-    <ClInclude Include="ObjectList.h" />
     <ClInclude Include="physics\PhysicsClass.h" />
+    <ClInclude Include="physics\PhysicsComponentClass.h" />
     <ClInclude Include="system\InputClass.h" />
     <ClInclude Include="system\SystemClass.h" />
     <ClInclude Include="system\TimerClass.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="gameobject\GameObjectClass.cpp" />
+    <ClCompile Include="gameobject\GameObjectListClass.cpp" />
     <ClCompile Include="gameobject\ObjectClass.cpp" />
+    <ClCompile Include="gameobject\ObjectListClass.cpp" />
     <ClCompile Include="graphics\CameraClass.cpp" />
     <ClCompile Include="graphics\CartoonShaderClass.cpp" />
     <ClCompile Include="graphics\ColorShaderClass.cpp" />
     <ClCompile Include="graphics\D3DClass.cpp" />
     <ClCompile Include="graphics\GraphicsClass.cpp" />
+    <ClCompile Include="graphics\GraphicsComponentClass.cpp" />
     <ClCompile Include="graphics\LightClass.cpp" />
     <ClCompile Include="graphics\LightShaderClass.cpp" />
     <ClCompile Include="graphics\ModelClass.cpp" />
+    <ClCompile Include="graphics\ModelMapClass.cpp" />
     <ClCompile Include="graphics\TextureClass.cpp" />
+    <ClCompile Include="graphics\TextureMapClass.cpp" />
     <ClCompile Include="graphics\TextureShaderClass.cpp" />
     <ClCompile Include="physics\PhysicsClass.cpp" />
-    <ClCompile Include="ObjectList.cpp" />
+    <ClCompile Include="physics\PhysicsComponentClass.cpp" />
     <ClCompile Include="system\InputClass.cpp" />
     <ClCompile Include="system\Main.cpp" />
     <ClCompile Include="system\SystemClass.cpp" />

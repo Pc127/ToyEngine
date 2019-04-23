@@ -59,11 +59,6 @@ int ModelClass::GetIndexCount()
 	return m_indexCount;
 }
 
-ID3D11ShaderResourceView * ModelClass::GetTexture()
-{
-	return nullptr;
-}
-
 
 bool ModelClass::InitializeBuffers(ID3D11Device *device)
 {

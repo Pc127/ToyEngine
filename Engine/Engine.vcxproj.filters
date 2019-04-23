@@ -70,7 +70,25 @@
     <ClInclude Include="gameobject\ObjectClass.h">
       <Filter>Source\gameobject</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectList.h">
+    <ClInclude Include="gameobject\ObjectListClass.h">
+      <Filter>Source\gameobject</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\GraphicsComponentClass.h">
+      <Filter>Source\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\TextureMapClass.h">
+      <Filter>Source\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\ModelMapClass.h">
+      <Filter>Source\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobject\GameObjectClass.h">
+      <Filter>Source\gameobject</Filter>
+    </ClInclude>
+    <ClInclude Include="physics\PhysicsComponentClass.h">
+      <Filter>Source\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobject\GameObjectListClass.h">
       <Filter>Source\gameobject</Filter>
     </ClInclude>
   </ItemGroup>
@@ -123,7 +141,25 @@
     <ClCompile Include="graphics\CameraClass.cpp">
       <Filter>Source\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectList.cpp">
+    <ClCompile Include="gameobject\ObjectListClass.cpp">
+      <Filter>Source\gameobject</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\GraphicsComponentClass.cpp">
+      <Filter>Source\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\TextureMapClass.cpp">
+      <Filter>Source\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\ModelMapClass.cpp">
+      <Filter>Source\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobject\GameObjectClass.cpp">
+      <Filter>Source\gameobject</Filter>
+    </ClCompile>
+    <ClCompile Include="physics\PhysicsComponentClass.cpp">
+      <Filter>Source\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobject\GameObjectListClass.cpp">
       <Filter>Source\gameobject</Filter>
     </ClCompile>
   </ItemGroup>
