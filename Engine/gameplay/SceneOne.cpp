@@ -32,6 +32,14 @@ bool SceneOne::Initialize()
 	m_SceneObject[4]->Initialize();
 	m_SceneObject[4]->m_PhysicsComponent->m_position = D3DXVECTOR3(7, 1.5, 0);
 
+	// 桌子
+	m_SceneObject.push_back(new Table);
+	m_SceneObject[5]->Initialize();
+
+	// 桌面
+	m_SceneObject.push_back(new Desktop);
+	m_SceneObject[6]->Initialize();
+
 	return true;
 }
 

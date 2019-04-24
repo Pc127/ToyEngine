@@ -2,6 +2,8 @@
 #include "GameSceneClass.h"
 #include "BallOne.h"
 #include "BallTwo.h"
+#include "Table.h"
+#include "Desktop.h"
 
 class SceneOne:public GameSceneClass
 {

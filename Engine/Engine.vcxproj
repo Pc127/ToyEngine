@@ -24,7 +24,9 @@
     <ClInclude Include="gameobject\GameSceneClass.h" />
     <ClInclude Include="gameplay\BallOne.h" />
     <ClInclude Include="gameplay\BallTwo.h" />
+    <ClInclude Include="gameplay\Desktop.h" />
     <ClInclude Include="gameplay\SceneOne.h" />
+    <ClInclude Include="gameplay\Table.h" />
     <ClInclude Include="graphics\CameraClass.h" />
     <ClInclude Include="graphics\CartoonShaderClass.h" />
     <ClInclude Include="graphics\ColorShaderClass.h" />
@@ -54,7 +56,9 @@
     <ClCompile Include="gameobject\GameSceneClass.cpp" />
     <ClCompile Include="gameplay\BallOne.cpp" />
     <ClCompile Include="gameplay\BallTwo.cpp" />
+    <ClCompile Include="gameplay\Desktop.cpp" />
     <ClCompile Include="gameplay\SceneOne.cpp" />
+    <ClCompile Include="gameplay\Table.cpp" />
     <ClCompile Include="graphics\CameraClass.cpp" />
     <ClCompile Include="graphics\CartoonShaderClass.cpp" />
     <ClCompile Include="graphics\ColorShaderClass.cpp" />

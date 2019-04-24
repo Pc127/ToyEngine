@@ -56,8 +56,8 @@ void CameraClass::Render()
 	D3DXMATRIX rotationMatrix;
 
 	// 设置方向
-	up.x = 0.0f;
-	up.y = 1.0f;
+	up.x = 1.0f;
+	up.y = 0.0f;
 	up.z = 0.0f;
 
 	// 相机的世界坐标
@@ -67,8 +67,8 @@ void CameraClass::Render()
 
 	// 摄像头的朝向
 	lookAt.x = 0.0f;
-	lookAt.y = 0.0f;
-	lookAt.z = 1.0f;
+	lookAt.y = -1.0f;
+	lookAt.z = 0.0f;
 
 	// 旋转的设置，以弧度为单位
 	pitch = m_rotationX * 0.0174532925f;

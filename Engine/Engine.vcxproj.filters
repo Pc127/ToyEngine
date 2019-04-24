@@ -115,6 +115,12 @@
     <ClInclude Include="physics\CollisionDetectorClass.h">
       <Filter>Source\physics</Filter>
     </ClInclude>
+    <ClInclude Include="gameplay\Table.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\Desktop.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="system\SystemClass.cpp">
@@ -200,6 +206,12 @@
     </ClCompile>
     <ClCompile Include="physics\CollisionDetectorClass.cpp">
       <Filter>Source\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Table.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Desktop.cpp">
+      <Filter>Source\gameplay</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

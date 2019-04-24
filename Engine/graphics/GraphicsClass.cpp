@@ -29,7 +29,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	if (!m_Camera) {
 		return false;
 	}
-	m_Camera->SetPosition(0.0f, 0.0f, -20.0f);
+	m_Camera->SetPosition(0.0f, 120.0f, 0.0f);
 
 	// 着色器模块
 	// 光照着色器
