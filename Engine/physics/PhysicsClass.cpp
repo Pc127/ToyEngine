@@ -29,11 +29,15 @@ bool PhysicsClass::Frame(float deltatime)
 		if (gameobject->active && gameobject->m_PhysicsComponent) {
 			PhysicsComponentClass* pc = gameobject->m_PhysicsComponent;
 			// 对速度不为0的物体进行碰撞检测
-			if (pc->m_velocity != 0) {
+			if (true) {
+				// 滤去在该游戏物体之前的物体
+				bool index = false;
 				for (GameObjectClass* gameobject2 : GameObjectListClass::GetSingleton()->m_GameObjects) {
 					// 相同物体跳过检测
-					if (gameobject2 == gameobject)
+					if (!index && gameobject2 == gameobject) {
+						index = true;
 						continue;
+					}				
 					if (CollisionDetectorClass::GetSingleton()->Detect(pc, gameobject2->m_PhysicsComponent, deltatime)) {
 						// 发生碰撞时的处理
 						ExchangeVelocity(pc, gameobject2->m_PhysicsComponent);
