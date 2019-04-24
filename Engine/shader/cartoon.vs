@@ -36,7 +36,7 @@ PixelInputType LightVertexShader(VertexInputType input)
 	// Change the position vector to be 4 units for proper matrix calculations.
     input.position.w = 1.0f;
 
-	float _Outline = 0.12f;
+	float _Outline = 0.14f;
 
 	output.position = input.position;
 	output.position = mul(output.position, worldMatrix);
@@ -44,7 +44,7 @@ PixelInputType LightVertexShader(VertexInputType input)
 
 	input.normal = mul(input.normal, worldMatrix);
     input.normal = mul(input.normal, viewMatrix);
-	input.normal.z = 0.5;
+	input.normal.z = 0.1;
 
 	output.position = output.position + float4(normalize(input.normal),0) *_Outline;
 
