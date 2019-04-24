@@ -9,7 +9,8 @@
 #define _SYSTEMCLASS_H_
 #endif // ! _SYSTEMCLASS_H_
 
-// gameplay
+// 渲染的场景
+#include "GameSceneClass.h"
 #include "SceneOne.h"
 
 #define WIN32_LEAN_AND_MEAN

@@ -13,7 +13,7 @@ class GameSceneClass
 {
 public:
 	GameSceneClass();
-	~GameSceneClass();
+	virtual ~GameSceneClass();
 
 	bool ClearScene();
 

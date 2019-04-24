@@ -29,7 +29,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	if (!m_Camera) {
 		return false;
 	}
-	m_Camera->SetPosition(0.0f, 0.0f, -10.0f);
+	m_Camera->SetPosition(0.0f, 0.0f, -20.0f);
 
 	// 着色器模块
 	// 光照着色器
@@ -143,6 +143,11 @@ bool GraphicsClass::Render()
 		if (gameobject->active && gameobject->m_GraphicsComponent) {
 
 			GraphicsComponentClass* gc = gameobject->m_GraphicsComponent;
+
+			// 获取世界矩阵
+			if (gameobject->m_PhysicsComponent) {
+				gameobject->m_PhysicsComponent->GetWorldMatrix(worldMatrix);
+			}
 
 			gc->m_Model->Render(m_D3D->GetDeviceContext());
 			// 渲染正面

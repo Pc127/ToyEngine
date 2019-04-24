@@ -7,7 +7,7 @@ class GameObjectClass
 {
 public:
 	GameObjectClass();
-	~GameObjectClass();
+	virtual ~GameObjectClass();
 
 	bool Register();
 

@@ -1,6 +1,9 @@
 ﻿#pragma once
-#include <D3DX10math.h>
-#include "Eigen\Dense"
+#include <D3DX10Math.h>
+#include "MathHeader.h"
+
+#include "ColliderClass.h"
+#include "SphereColliderClass.h"
 
 using namespace Eigen;
 
@@ -13,38 +16,32 @@ public:
 	// 不指定参数
 	bool Initialize();
 	void Shutdown();
+
+	// Component原则上不进行帧更新
 	bool Frame();
 
-	// 进行碰撞检测
-	bool CollisionDetect();
 public:
-	D3DXVECTOR3 GetPosition();
-	unsigned int GetModelIndex();
-	unsigned int GetTextureIndex();
-
-	D3DXVECTOR3 GetDirection();
-	float GetVelocity();
-
-	void SetVelocity(float);
-	void SetPosition(D3DXVECTOR3);
-	void SetDirection(D3DXVECTOR3);
-
-	void SetRotation(float);
-	void SetRotationSpeed(float);
-
 	// 根据位置获得世界矩阵
 	void GetWorldMatrix(D3DXMATRIX&);
-	void GetWorldMatrixUnrotate(D3DXMATRIX&);
-	// 获得旋转角度
-	float GetRotation();
-	float GetRotationSpeed();
 public:
+	// 变量的get/set先不写了吧
+
+public:
+	// 该组件是否激活
+	bool active;
+
+	// 位置
 	D3DXVECTOR3 m_position;
+
+	// 速度
 	D3DXVECTOR3 m_direction;
 	float m_velocity;
 
 	// 旋转
 	float m_rotation;
 	float m_rotationSpeed;
+
+	// 物理组件的碰撞体
+	ColliderClass* m_collider;
 	
 };

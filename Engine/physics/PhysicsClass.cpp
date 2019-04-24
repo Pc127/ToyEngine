@@ -22,81 +22,55 @@ void PhysicsClass::Shutdown()
 
 }
 
-bool PhysicsClass::Frame()
+bool PhysicsClass::Frame(float deltatime)
 {
+	// 用来进行碰撞检测
+	for (GameObjectClass* gameobject : GameObjectListClass::GetSingleton()->m_GameObjects) {
+		if (gameobject->active && gameobject->m_PhysicsComponent) {
+			PhysicsComponentClass* pc = gameobject->m_PhysicsComponent;
+			// 对速度不为0的物体进行碰撞检测
+			if (pc->m_velocity != 0) {
+				for (GameObjectClass* gameobject2 : GameObjectListClass::GetSingleton()->m_GameObjects) {
+					// 相同物体跳过检测
+					if (gameobject2 == gameobject)
+						continue;
+					if (CollisionDetectorClass::GetSingleton()->Detect(pc, gameobject2->m_PhysicsComponent, deltatime)) {
+						// 发生碰撞时的处理
+						ExchangeVelocity(pc, gameobject2->m_PhysicsComponent);
+					};
+				}
+			}
 
-	// 进行碰撞检测
-	CollisionDetect();
-	// 循环计算 只考虑速度&时间
-	//for (int i = 0; i < m_objNum; i++) {
-	//	if (m_obj[i].GetVelocity() != 0) {
-	//		D3DXVECTOR3 pos = m_obj[i].GetPosition() + deltaTime * m_obj[i].GetDirection() * m_obj[i].GetVelocity();
-	//		m_obj[i].SetPosition(pos);
-	//		 旋转
-	//		float rotation = m_obj[i].GetRotation() + deltaTime * m_obj[i].GetRotationSpeed();
-	//		if (rotation > 360.0f) {
-	//			rotation -= 360.0f;
-	//		}
-	//		if (rotation < 0.0f) {
-	//			rotation += 360.0f;
-	//		}
-	//		m_obj[i].SetRotation(rotation);
-	//	}
-	//}
-	
+		}
+	}
+
+	// 用来更新位置
+	for (GameObjectClass* gameobject : GameObjectListClass::GetSingleton()->m_GameObjects) {
+		if (gameobject->active && gameobject->m_PhysicsComponent) {
+
+			PhysicsComponentClass* pc = gameobject->m_PhysicsComponent;
+
+			pc->m_position += deltatime*pc->m_velocity*pc->m_direction;
+
+		}
+	}
+
 	return true;
-}
-
-void PhysicsClass::GetWorldMatrix(D3DXMATRIX &worldMatrix, unsigned int i)
-{
-
-}
-
-void PhysicsClass::GetWorldMatrixUnrotate(D3DXMATRIX &worldMatrix, unsigned int i)
-{
-	return;
-}
-
-unsigned int PhysicsClass::GetModelIndex(unsigned int i)
-{
-	return 0;
-}
-
-unsigned int PhysicsClass::GetTextureIndex(unsigned int i)
-{
-	return 0;
-}
-
-int PhysicsClass::GetObjCount()
-{
-	return 0;
 }
 
 bool PhysicsClass::CollisionDetect()
 {
-	//// 遍历小球
-	//for (int i = 0; i < m_objNum; ++i) {
-	//	// 对速度不为0的球体进行判断
-	//	if (m_obj[i].GetVelocity() != 0) {
-	//		D3DXVECTOR3 dir1 = m_obj[i].GetDirection();
-	//		D3DXVECTOR3 pos1 = m_obj[i].GetPosition() + m_timer->DeltaTime() * m_obj[i].GetDirection() * m_obj[i].GetVelocity();
-	//		float v1 = m_obj[i].GetVelocity();
+	return false;
+}
 
-	//		for (int j = 0; j < m_objNum; j++) {
-	//			D3DXVECTOR3 pos2 = m_obj[j].GetPosition() + m_timer->DeltaTime() * m_obj[j].GetDirection() * m_obj[j].GetVelocity();
-	//			// 两球距离
-	//			D3DXVECTOR3 diff = pos1 - pos2;
-	//			if (D3DXVec3Length(&diff) < 2.2f) {
-	//				// 交换速度
-	//				m_obj[i].SetDirection(m_obj[j].GetDirection());
-	//				m_obj[i].SetVelocity(m_obj[j].GetVelocity());
+void PhysicsClass::ExchangeVelocity(PhysicsComponentClass *pc1, PhysicsComponentClass *pc2)
+{
+	D3DXVECTOR3 direction = pc1->m_direction;
+	float velo = pc1->m_velocity;
 
-	//				m_obj[j].SetDirection(dir1);
-	//				m_obj[j].SetVelocity(v1);
-	//			}
-	//		}
-	//	}
-	//}
+	pc1->m_direction = pc2->m_direction;
+	pc1->m_velocity = pc2->m_velocity;
 
-	return true;
+	pc2->m_direction = direction;
+	pc2->m_velocity = velo;
 }

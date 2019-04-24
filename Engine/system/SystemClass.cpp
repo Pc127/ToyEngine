@@ -129,9 +129,19 @@ LRESULT SystemClass::MessageHandler(HWND hwnd, UINT umsg, WPARAM wparam, LPARAM 
 
 bool SystemClass::Frame()
 {	
-	bool result;
+	bool result = true;
 
 	if (m_Input->IsKeyDown(VK_ESCAPE)) {
+		return false;
+	}
+
+	m_Timer->Frame();
+	if (!result) {
+		return false;
+	}
+
+	result = m_Physics->Frame(m_Timer->DeltaTime());
+	if (!result) {
 		return false;
 	}
 

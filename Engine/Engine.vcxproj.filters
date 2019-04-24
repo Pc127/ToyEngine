@@ -100,6 +100,21 @@
     <ClInclude Include="gameplay\SceneOne.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
+    <ClInclude Include="physics\MathHeader.h">
+      <Filter>Source\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\BallTwo.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="physics\ColliderClass.h">
+      <Filter>Source\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="physics\SphereColliderClass.h">
+      <Filter>Source\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="physics\CollisionDetectorClass.h">
+      <Filter>Source\physics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="system\SystemClass.cpp">
@@ -173,6 +188,18 @@
     </ClCompile>
     <ClCompile Include="gameplay\SceneOne.cpp">
       <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\BallTwo.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="physics\ColliderClass.cpp">
+      <Filter>Source\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="physics\SphereColliderClass.cpp">
+      <Filter>Source\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="physics\CollisionDetectorClass.cpp">
+      <Filter>Source\physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

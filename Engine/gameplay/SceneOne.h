@@ -1,6 +1,7 @@
 #pragma once
 #include "GameSceneClass.h"
 #include "BallOne.h"
+#include "BallTwo.h"
 
 class SceneOne:public GameSceneClass
 {

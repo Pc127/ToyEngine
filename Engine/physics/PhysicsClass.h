@@ -1,5 +1,7 @@
 ﻿#pragma once
-#include <D3DX10math.h>
+#include "GameObjectClass.h"
+#include "GameObjectListClass.h"
+#include "CollisionDetectorClass.h"
 
 class PhysicsClass
 {
@@ -11,17 +13,9 @@ public:
 	bool Initialize();
 	void Shutdown();
 	// 计算更新物体位置
-	bool Frame();
-	// 获得指定索引的世界矩阵
-	void GetWorldMatrix(D3DXMATRIX&, unsigned int);
-	void GetWorldMatrixUnrotate(D3DXMATRIX&, unsigned int);
-
-	unsigned int GetModelIndex(unsigned int);
-	unsigned int GetTextureIndex(unsigned int);
-	int GetObjCount();
-
-	// 进行碰撞检测
-	bool CollisionDetect();
+	bool Frame(float);
+	
 private:
-	unsigned int m_objNum;
+	bool CollisionDetect();
+	void ExchangeVelocity(PhysicsComponentClass*, PhysicsComponentClass*);
 };
