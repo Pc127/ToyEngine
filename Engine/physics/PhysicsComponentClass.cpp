@@ -21,7 +21,10 @@ bool PhysicsComponentClass::Initialize()
 
 void PhysicsComponentClass::Shutdown()
 {
-
+	if (m_collider) {
+		delete m_collider;
+		m_collider = 0;
+	}
 }
 
 bool PhysicsComponentClass::Frame()
