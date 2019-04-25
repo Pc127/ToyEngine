@@ -37,6 +37,15 @@ public:
 	D3DXVECTOR3 m_direction;
 	float m_velocity;
 
+	// 加速度
+	D3DXVECTOR3 m_acceleration;
+
+	// 阻尼系数
+	float damping;
+	
+	// 质量
+	float mass = 1;
+
 	// 旋转
 	float m_rotation;
 	float m_rotationSpeed;

@@ -26,11 +26,11 @@ bool SceneOne::Initialize()
 
 	m_SceneObject.push_back(new BallOne);
 	m_SceneObject[3]->Initialize();
-	m_SceneObject[3]->m_PhysicsComponent->m_position = D3DXVECTOR3(7, -0.9, 0);
+	m_SceneObject[3]->m_PhysicsComponent->m_position = D3DXVECTOR3(7, 0, -0.9);
 
 	m_SceneObject.push_back(new BallOne);
 	m_SceneObject[4]->Initialize();
-	m_SceneObject[4]->m_PhysicsComponent->m_position = D3DXVECTOR3(7, 1.5, 0);
+	m_SceneObject[4]->m_PhysicsComponent->m_position = D3DXVECTOR3(7, 0, 1.5);
 
 	// 桌子
 	m_SceneObject.push_back(new Table);

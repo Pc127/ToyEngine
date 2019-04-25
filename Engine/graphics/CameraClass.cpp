@@ -55,6 +55,7 @@ void CameraClass::Render()
 	float yaw, pitch, roll;
 	D3DXMATRIX rotationMatrix;
 
+	// 上方是x
 	// 设置方向
 	up.x = 1.0f;
 	up.y = 0.0f;
@@ -66,6 +67,7 @@ void CameraClass::Render()
 	position.z = m_positionZ;
 
 	// 摄像头的朝向
+	// 朝向是y
 	lookAt.x = 0.0f;
 	lookAt.y = -1.0f;
 	lookAt.z = 0.0f;

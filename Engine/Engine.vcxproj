@@ -22,6 +22,7 @@
     <ClInclude Include="gameobject\GameObjectClass.h" />
     <ClInclude Include="gameobject\GameObjectListClass.h" />
     <ClInclude Include="gameobject\GameSceneClass.h" />
+    <ClInclude Include="gameobject\GameSceneSystemClass.h" />
     <ClInclude Include="gameplay\BallOne.h" />
     <ClInclude Include="gameplay\BallTwo.h" />
     <ClInclude Include="gameplay\Desktop.h" />
@@ -54,6 +55,7 @@
     <ClCompile Include="gameobject\GameObjectClass.cpp" />
     <ClCompile Include="gameobject\GameObjectListClass.cpp" />
     <ClCompile Include="gameobject\GameSceneClass.cpp" />
+    <ClCompile Include="gameobject\GameSceneSystemClass.cpp" />
     <ClCompile Include="gameplay\BallOne.cpp" />
     <ClCompile Include="gameplay\BallTwo.cpp" />
     <ClCompile Include="gameplay\Desktop.cpp" />

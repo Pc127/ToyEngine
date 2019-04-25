@@ -48,11 +48,13 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 		return false;
 	}
 	m_Light->SetDiffuseColor(1.0f, 1.0f, 1.0f, 1.0f);
-	m_Light->SetDirection(1.0f, 0.0f, 0.0f);
-	m_Light->SetAmbientColor(1.0f, 1.0f, 1.0f, 1.0f);
+	// 与相机保持一致
+	m_Light->SetDirection(0.0f, -1.0f, 0.0f);
+	m_Light->SetAmbientColor(0.5f, 0.5f, 0.5f, 1.0f);
 
-	m_Light->SetSpecularColor(1.0f, 1.0f, 1.0f, 1.0f);
-	m_Light->SetSpecularPower(16.0f);
+	m_Light->SetSpecularColor(0.0f, 0.0f, 0.0f, 1.0f);
+	//m_Light->SetSpecularColor(1.0f, 1.0f, 1.0f, 1.0f);
+	m_Light->SetSpecularPower(0.00001f);
 
 	// 卡通着色器
 	m_CartoonShader = new CartoonShaderClass;
@@ -150,14 +152,6 @@ bool GraphicsClass::Render()
 			}
 
 			gc->m_Model->Render(m_D3D->GetDeviceContext());
-			// 渲染正面
-			m_D3D->RenderFront();
-			result = m_LightShader->Render(m_D3D->GetDeviceContext(), gc->m_Model->GetIndexCount(),
-				worldMatrix, viewMatrix, projectionMatrix, gc->m_Texture, m_Light->GetDirection(), m_Light->GetAmbientColor(), m_Light->GetDiffuseColor(),
-				m_Camera->GetPosition(), m_Light->GetSpecularColor(), m_Light->GetSpecularPower());
-			if (!result) {
-				return false;
-			}
 
 			// 渲染背面
 			m_D3D->RenderBack();
@@ -166,6 +160,18 @@ bool GraphicsClass::Render()
 			if (!result) {
 				return false;
 			}
+
+			// 渲染正面
+
+			m_D3D->RenderFront();
+			result = m_LightShader->Render(m_D3D->GetDeviceContext(), gc->m_Model->GetIndexCount(),
+				worldMatrix, viewMatrix, projectionMatrix, gc->m_Texture, m_Light->GetDirection(), m_Light->GetAmbientColor(), m_Light->GetDiffuseColor(),
+				m_Camera->GetPosition(), m_Light->GetSpecularColor(), m_Light->GetSpecularPower());
+			if (!result) {
+				return false;
+			}
+
+			
 			
 		}
 	}

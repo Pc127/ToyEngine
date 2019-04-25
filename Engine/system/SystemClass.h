@@ -11,6 +11,7 @@
 
 // 渲染的场景
 #include "GameSceneClass.h"
+#include "GameSceneSystemClass.h"
 #include "SceneOne.h"
 
 #define WIN32_LEAN_AND_MEAN
@@ -46,7 +47,7 @@ private:
 	PhysicsClass* m_Physics;
 
 	// 场景
-	GameSceneClass* m_GameScene;
+	GameSceneSystemClass* m_SceneSystem;
 };
 
 

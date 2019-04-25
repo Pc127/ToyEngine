@@ -51,8 +51,9 @@ bool SystemClass::Initialize()
 	m_Timer->Initialize();
 
 	// 游戏场景
-	m_GameScene = new SceneOne;
-	m_GameScene->Initialize();
+	m_SceneSystem = GameSceneSystemClass::GetSingleton();
+	m_SceneSystem->SetScene("play", new SceneOne);
+	m_SceneSystem->Initialize("play");
 
 	return true;
 }
@@ -97,10 +98,9 @@ void SystemClass::Shutdown()
 		m_Input = 0;
 	}
 
-	if (m_GameScene) {
-		m_GameScene->Shutdown();
-		delete m_GameScene;
-		m_GameScene = 0;
+	if (m_SceneSystem) {
+		m_SceneSystem->Shutdown();
+		m_SceneSystem = 0;
 	}
 
 	ShutdownWindows();

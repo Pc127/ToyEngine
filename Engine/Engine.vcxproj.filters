@@ -121,6 +121,9 @@
     <ClInclude Include="gameplay\Desktop.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
+    <ClInclude Include="gameobject\GameSceneSystemClass.h">
+      <Filter>Source\gameobject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="system\SystemClass.cpp">
@@ -212,6 +215,9 @@
     </ClCompile>
     <ClCompile Include="gameplay\Desktop.cpp">
       <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobject\GameSceneSystemClass.cpp">
+      <Filter>Source\gameobject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
