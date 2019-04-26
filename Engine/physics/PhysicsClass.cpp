@@ -13,12 +13,15 @@ PhysicsClass::~PhysicsClass()
 
 bool PhysicsClass::Initialize()
 {
+	// 获取了单例
+	m_force = ForceRegistryClass::GetSingleton();
+	m_force->Initialize();
 	return true;
 }
 
 void PhysicsClass::Shutdown()
 {
-	
+	m_force->Shutdown();
 
 }
 
@@ -48,13 +51,16 @@ bool PhysicsClass::Frame(float deltatime)
 		}
 	}
 
+	// 处理受力 与 速度更新
+	m_force->Frame(deltatime);
+
 	// 用来更新位置
 	for (GameObjectClass* gameobject : GameObjectListClass::GetSingleton()->m_GameObjects) {
 		if (gameobject->active && gameobject->m_PhysicsComponent) {
 
 			PhysicsComponentClass* pc = gameobject->m_PhysicsComponent;
 
-			pc->m_position += deltatime*pc->m_velocity*pc->m_direction;
+			pc->m_position += deltatime*pc->m_velocity;
 
 		}
 	}
@@ -69,12 +75,9 @@ bool PhysicsClass::CollisionDetect()
 
 void PhysicsClass::ExchangeVelocity(PhysicsComponentClass *pc1, PhysicsComponentClass *pc2)
 {
-	D3DXVECTOR3 direction = pc1->m_direction;
-	float velo = pc1->m_velocity;
+	D3DXVECTOR3  velo = pc1->m_velocity;
 
-	pc1->m_direction = pc2->m_direction;
 	pc1->m_velocity = pc2->m_velocity;
 
-	pc2->m_direction = direction;
 	pc2->m_velocity = velo;
 }

@@ -34,15 +34,8 @@ public:
 	D3DXVECTOR3 m_position;
 
 	// 速度
-	D3DXVECTOR3 m_direction;
-	float m_velocity;
+	D3DXVECTOR3 m_velocity;
 
-	// 加速度
-	D3DXVECTOR3 m_acceleration;
-
-	// 阻尼系数
-	float damping;
-	
 	// 质量
 	float mass = 1;
 

@@ -124,6 +124,15 @@
     <ClInclude Include="gameobject\GameSceneSystemClass.h">
       <Filter>Source\gameobject</Filter>
     </ClInclude>
+    <ClInclude Include="physics\ForceGeneratorClass.h">
+      <Filter>Source\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="physics\ForceRegistryClass.h">
+      <Filter>Source\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="physics\FrictionForceClass.h">
+      <Filter>Source\physics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="system\SystemClass.cpp">
@@ -218,6 +227,15 @@
     </ClCompile>
     <ClCompile Include="gameobject\GameSceneSystemClass.cpp">
       <Filter>Source\gameobject</Filter>
+    </ClCompile>
+    <ClCompile Include="physics\ForceGeneratorClass.cpp">
+      <Filter>Source\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="physics\ForceRegistryClass.cpp">
+      <Filter>Source\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="physics\FrictionForceClass.cpp">
+      <Filter>Source\physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

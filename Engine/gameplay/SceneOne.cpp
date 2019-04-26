@@ -14,11 +14,15 @@ SceneOne::~SceneOne()
 bool SceneOne::Initialize()
 {
 	// 场景one仅有一个物体
+	// ballone是静止的球
 	m_SceneObject.push_back(new BallOne);
 	m_SceneObject[0]->Initialize();
 
+	// ball two 是运动的球
 	m_SceneObject.push_back(new BallTwo);
 	m_SceneObject[1]->Initialize();
+	m_SceneObject[1]->m_PhysicsComponent->m_velocity = D3DXVECTOR3(-5, 0, 0);
+	ForceRegistryClass::GetSingleton()->AddForce(m_SceneObject[1]->m_PhysicsComponent, new FrictionForceClass(0.8));
 
 	m_SceneObject.push_back(new BallOne);
 	m_SceneObject[2]->Initialize();

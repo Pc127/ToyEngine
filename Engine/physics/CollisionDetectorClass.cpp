@@ -16,8 +16,8 @@ bool CollisionDetectorClass::Detect(PhysicsComponentClass *pc1, PhysicsComponent
 		return false;
 	if (c1->m_type == ColliderType::SPHRER && c2->m_type == ColliderType::SPHRER) {
 		// 更新位置
-		D3DXVECTOR3 p1 = pc1->m_position + deltatime*pc1->m_velocity*pc1->m_direction;
-		D3DXVECTOR3 p2 = pc2->m_position + deltatime*pc2->m_velocity*pc2->m_direction;
+		D3DXVECTOR3 p1 = pc1->m_position + deltatime*pc1->m_velocity;
+		D3DXVECTOR3 p2 = pc2->m_position + deltatime*pc2->m_velocity;
 		return DetectSphere(dynamic_cast<SphereColliderClass*>(c1), dynamic_cast<SphereColliderClass*>(c2), p1, p2);
 	}
 

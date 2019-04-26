@@ -14,8 +14,7 @@ PhysicsComponentClass::~PhysicsComponentClass()
 bool PhysicsComponentClass::Initialize()
 {
 	m_position = D3DXVECTOR3(0, 0, 0);
-	m_direction = D3DXVECTOR3(0, 0, 0);
-	m_velocity = 0.0f;
+	m_velocity = D3DXVECTOR3(0, 0, 0);
 	return true;
 }
 

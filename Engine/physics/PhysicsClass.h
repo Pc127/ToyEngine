@@ -2,6 +2,8 @@
 #include "GameObjectClass.h"
 #include "GameObjectListClass.h"
 #include "CollisionDetectorClass.h"
+// 受力的中心处理
+#include "ForceRegistryClass.h"
 
 class PhysicsClass
 {
@@ -18,4 +20,5 @@ public:
 private:
 	bool CollisionDetect();
 	void ExchangeVelocity(PhysicsComponentClass*, PhysicsComponentClass*);
+	ForceRegistryClass* m_force;
 };
