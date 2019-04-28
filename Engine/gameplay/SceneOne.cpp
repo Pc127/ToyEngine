@@ -13,18 +13,16 @@ SceneOne::~SceneOne()
 
 bool SceneOne::Initialize()
 {
-	//ballOne
+	//1
 	m_SceneObject.push_back(new Ball(L"../Engine/data/Ball4.dds"));
 	m_SceneObject[0]->Initialize();
 	m_SceneObject[0]->m_PhysicsComponent->m_position = D3DXVECTOR3(0, 0, 40);
 	
 
-	// balltwo 
+	//2 
 	m_SceneObject.push_back(new Ball(L"../Engine/data/Ball14.dds"));
 	m_SceneObject[1]->Initialize();
 	m_SceneObject[1]->m_PhysicsComponent->m_position = D3DXVECTOR3(2.5, 0, 40);
-//	m_SceneObject[1]->m_PhysicsComponent->m_velocity = D3DXVECTOR3(-5, 0, 0);
-//	ForceRegistryClass::GetSingleton()->AddForce(m_SceneObject[1]->m_PhysicsComponent, new FrictionForceClass(0.8));
 
 	//3
 	m_SceneObject.push_back(new Ball(L"../Engine/data/Ball3.dds"));
@@ -97,13 +95,6 @@ bool SceneOne::Initialize()
 	m_SceneObject[15]->Initialize();
 	m_SceneObject[15]->m_PhysicsComponent->m_position = D3DXVECTOR3(0, 0, 0);
 	m_SceneObject[15]->m_PhysicsComponent->m_velocity = D3DXVECTOR3(0, 0, 2);
-
-
-
-
-
-
-
 
 	// 桌子
 	m_SceneObject.push_back(new Table);

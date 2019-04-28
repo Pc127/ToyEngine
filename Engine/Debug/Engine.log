@@ -55,12 +55,5 @@ c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): w
   c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50445): note: see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': macro redefinition
   c:\program files (x86)\windows kits\8.1\include\shared\winerror.h(50454): note: see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
-<<<<<<< HEAD
-c:\users\xieshiheng\documents\visual studio 2015\projects\engine\engine\gameplay\sceneone.cpp(26): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\xieshiheng\documents\visual studio 2015\projects\engine\engine\gameplay\sceneone.cpp(34): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
   Engine.vcxproj -> C:\Users\xieshiheng\Documents\Visual Studio 2015\Projects\Engine\Debug\Engine.exe
   Engine.vcxproj -> C:\Users\xieshiheng\Documents\Visual Studio 2015\Projects\Engine\Debug\Engine.pdb (Partial PDB)
-=======
-  Engine.vcxproj -> C:\Users\luojie\Documents\Visual Studio 2015\Projects\Engine\Debug\Engine.exe
-  Engine.vcxproj -> C:\Users\luojie\Documents\Visual Studio 2015\Projects\Engine\Debug\Engine.pdb (Partial PDB)
->>>>>>> 5d4f6b67e456d8a4af905d445af4bdbdae620426
