@@ -1,7 +1,6 @@
 #pragma once
 #include "GameSceneClass.h"
-#include "BallOne.h"
-#include "BallTwo.h"
+#include "Ball.h"
 #include "Table.h"
 #include "Desktop.h"
 #include "FrictionForceClass.h"

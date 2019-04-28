@@ -1,19 +1,20 @@
-﻿#include "BallOne.h"
+﻿#include "Ball.h"
 
 
 
-BallOne::BallOne()
+Ball::Ball(WCHAR* texture)
 {
+	m_Texture = texture;
 	Initialize();
 }
 
 
-BallOne::~BallOne()
+Ball::~Ball()
 {
 }
 
 
-bool BallOne::Initialize()
+bool Ball::Initialize()
 {
 	// 注册
 	Register();
@@ -22,7 +23,7 @@ bool BallOne::Initialize()
 
 	m_GraphicsComponent = new GraphicsComponentClass;
 
-	m_GraphicsComponent->Initialize("../Engine/data/ball.txt", L"../Engine/data/Ball1.dds");
+	m_GraphicsComponent->Initialize("../Engine/data/ball.txt", m_Texture);//L"../Engine/data/Ball1.dds"
 
 	this->active = true;
 
@@ -36,7 +37,7 @@ bool BallOne::Initialize()
 	return true;
 }
 
-bool BallOne::Frame()
+bool Ball::Frame()
 {
 	return false;
 }
