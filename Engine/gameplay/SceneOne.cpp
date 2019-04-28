@@ -22,6 +22,7 @@ bool SceneOne::Initialize()
 	m_SceneObject.push_back(new BallTwo);
 	m_SceneObject[1]->Initialize();
 	m_SceneObject[1]->m_PhysicsComponent->m_velocity = D3DXVECTOR3(-5, 0, 0);
+	// 为运动的球 添加了阻力
 	ForceRegistryClass::GetSingleton()->AddForce(m_SceneObject[1]->m_PhysicsComponent, new FrictionForceClass(0.8));
 
 	m_SceneObject.push_back(new BallOne);
