@@ -133,6 +133,12 @@
     <ClInclude Include="physics\FrictionForceClass.h">
       <Filter>Source\physics</Filter>
     </ClInclude>
+    <ClInclude Include="physics\GravityForceClass.h">
+      <Filter>Source\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="physics\ImpulseForceClass.h">
+      <Filter>Source\physics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="system\SystemClass.cpp">
@@ -235,6 +241,12 @@
       <Filter>Source\physics</Filter>
     </ClCompile>
     <ClCompile Include="physics\FrictionForceClass.cpp">
+      <Filter>Source\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="physics\GravityForceClass.cpp">
+      <Filter>Source\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="physics\ImpulseForceClass.cpp">
       <Filter>Source\physics</Filter>
     </ClCompile>
   </ItemGroup>
