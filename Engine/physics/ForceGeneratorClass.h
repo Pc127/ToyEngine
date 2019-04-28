@@ -13,7 +13,7 @@ public:
 	virtual ~ForceGeneratorClass();
 
 	// 初始化
-	bool Initialize();
+	virtual bool Initialize();
 
 	// 更新受力的物体
 	// 如果为false表示该力的作用 需要被注销

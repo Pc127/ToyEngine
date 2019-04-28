@@ -19,7 +19,8 @@ public:
 	bool IsActive();
 	
 protected:
-	bool active;
+	// 这里写了个active 隐藏了父类的active 导致父类active永远是true
+	// bool active;
 
 	// 阻尼系数
 	// 摩擦力与速度成正比

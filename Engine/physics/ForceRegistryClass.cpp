@@ -53,13 +53,13 @@ void ForceRegistryClass::CheckList()
 {
 	// 这里有问题
 	// 如果一个力失效 我们会删除那个力 但不会删除物理组件
-	for (auto it = m_Force.begin(); it != m_Force.end(); it++) {
-		while (!it->force->IsActive()) {
+	for (auto it = m_Force.begin(); it != m_Force.end();) {
+		if (!((it->force)->IsActive())) {
 			delete it->force;
-			// erase返回下一个迭代器
 			it = m_Force.erase(it);
-			if (it == m_Force.end())
-				return;
+		}
+		else {
+			++it;
 		}
 	}
 }

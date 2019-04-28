@@ -20,6 +20,11 @@ bool FrictionForceClass::Initialize()
 
 bool FrictionForceClass::Frame(PhysicsComponentClass *pc, float deltatime)
 {
+	if (D3DXVec3Length(&pc->m_velocity) == 0) {
+		active = false;
+		return true;
+	}
+		
 	D3DXVECTOR3 deltaVec = pc->m_velocity * damping * -1 / pc->mass * deltatime/ D3DXVec3Length(&pc->m_velocity);
 
 	// 反向速度变话 超过了速度
