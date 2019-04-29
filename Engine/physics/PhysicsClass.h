@@ -20,5 +20,6 @@ public:
 private:
 	bool CollisionDetect();
 	void ExchangeVelocity(PhysicsComponentClass*, PhysicsComponentClass*);
+	void UpdateVelocity(PhysicsComponentClass*, PhysicsComponentClass*, CollisionDetectorClass::CollisionInfo);
 	ForceRegistryClass* m_force;
 };

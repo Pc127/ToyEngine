@@ -40,10 +40,12 @@ bool PhysicsClass::Frame(float deltatime)
 					if (!index && gameobject2 == gameobject) {
 						index = true;
 						continue;
-					}				
-					if (CollisionDetectorClass::GetSingleton()->Detect(pc, gameobject2->m_PhysicsComponent, deltatime)) {
+					}
+					CollisionDetectorClass::CollisionInfo info;
+					info = CollisionDetectorClass::GetSingleton()->Detect(pc, gameobject2->m_PhysicsComponent, deltatime);
+					if (info.hasCollide) {
 						// 发生碰撞时的处理
-						ExchangeVelocity(pc, gameobject2->m_PhysicsComponent);
+						UpdateVelocity(pc, gameobject2->m_PhysicsComponent, info);
 					};
 				}
 			}
@@ -81,3 +83,22 @@ void PhysicsClass::ExchangeVelocity(PhysicsComponentClass *pc1, PhysicsComponent
 
 	pc2->m_velocity = velo;
 }
+
+void PhysicsClass::UpdateVelocity(PhysicsComponentClass *pc1, PhysicsComponentClass *pc2, CollisionDetectorClass::CollisionInfo info)
+{
+	// 调整相交位置 分离相交情况
+	// 更新到碰撞的位置
+	pc1->m_position += info.collidetime * pc1->m_velocity;
+	pc2->m_position += info.collidetime * pc2->m_velocity;
+
+	// 计算碰撞法线
+	D3DXVECTOR3 normal = pc2->m_position - pc1->m_position;
+	D3DXVec3Normalize(&normal, &normal);
+	// 计算冲量
+	D3DXVECTOR3 impulsePerMass = normal*info.impluse;
+
+	// 利用冲量更新速度
+	pc1->m_velocity += impulsePerMass / pc1->mass;
+	pc2->m_velocity -= impulsePerMass / pc2->mass;
+}
+
