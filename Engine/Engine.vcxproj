@@ -40,6 +40,7 @@
     <ClInclude Include="graphics\TextureClass.h" />
     <ClInclude Include="graphics\TextureMapClass.h" />
     <ClInclude Include="graphics\TextureShaderClass.h" />
+    <ClInclude Include="physics\AabbColliderClass.h" />
     <ClInclude Include="physics\ColliderClass.h" />
     <ClInclude Include="physics\CollisionDetectorClass.h" />
     <ClInclude Include="physics\ForceGeneratorClass.h" />
@@ -77,6 +78,7 @@
     <ClCompile Include="graphics\TextureClass.cpp" />
     <ClCompile Include="graphics\TextureMapClass.cpp" />
     <ClCompile Include="graphics\TextureShaderClass.cpp" />
+    <ClCompile Include="physics\AabbColliderClass.cpp" />
     <ClCompile Include="physics\ColliderClass.cpp" />
     <ClCompile Include="physics\CollisionDetectorClass.cpp" />
     <ClCompile Include="physics\ForceGeneratorClass.cpp" />

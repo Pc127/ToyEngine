@@ -35,8 +35,8 @@ CollisionDetectorClass::CollisionInfo CollisionDetectorClass::DetectSphere(Physi
 
 	// 闭合速度
 	// 相当于球2静止
-	D3DXVECTOR3 closingVel = pc2->m_velocity;
-	closingVel -= pc1->m_velocity;
+	D3DXVECTOR3 closingVel = pc1->m_velocity;
+	closingVel -= pc2->m_velocity;
 
 	// 位置方向
 	D3DXVECTOR3 posDir = pc2->m_position;
@@ -60,6 +60,7 @@ CollisionDetectorClass::CollisionInfo CollisionDetectorClass::DetectSphere(Physi
 
 	// 碰撞的时间
 	float collidetime = (dif - sc1->radius - sc2->radius) / closingSpd;
+
 	info.hasCollide = true;
 	info.collidetime = collidetime;
 	// 弹性碰撞 的冲量计算

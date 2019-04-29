@@ -23,17 +23,19 @@ bool Ball::Initialize()
 
 	m_GraphicsComponent = new GraphicsComponentClass;
 
-	m_GraphicsComponent->Initialize("../Engine/data/ball.txt", m_Texture);//L"../Engine/data/Ball1.dds"
+	m_GraphicsComponent->Initialize("../Engine/data/ball.txt", m_Texture);
 
 	this->active = true;
 
 	m_PhysicsComponent = new PhysicsComponentClass;
-	// 速度静止
+
+	// 设置质量 与 碰撞体
 	m_PhysicsComponent->Initialize();
-	m_PhysicsComponent->m_position = D3DXVECTOR3(1, 0, 0);
 	m_PhysicsComponent->mass = 1;
 	m_PhysicsComponent->m_collider = new SphereColliderClass(1);
 
+	// 加入摩擦力
+	ForceRegistryClass::GetSingleton()->AddForce(m_PhysicsComponent, new FrictionForceClass(1.0f));
 
 	return true;
 }

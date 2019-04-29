@@ -18,10 +18,10 @@ bool FrictionForceClass::Initialize()
 	return true;
 }
 
+// 并不会让摩擦力失效
 bool FrictionForceClass::Frame(PhysicsComponentClass *pc, float deltatime)
 {
 	if (D3DXVec3Length(&pc->m_velocity) == 0) {
-		active = false;
 		return true;
 	}
 		
@@ -31,7 +31,6 @@ bool FrictionForceClass::Frame(PhysicsComponentClass *pc, float deltatime)
 	if (D3DXVec3Length(&deltaVec) > D3DXVec3Length(&pc->m_velocity)) {
 		// 运动速度为0
 		pc->m_velocity = D3DXVECTOR3(0,0,0);
-		active = false;
 	}
 	else {
 		pc->m_velocity += deltaVec;
@@ -39,7 +38,6 @@ bool FrictionForceClass::Frame(PhysicsComponentClass *pc, float deltatime)
 		// 并让摩擦力失效
 		if (D3DXVec3Length(&pc->m_velocity) < 0.01) {
 			pc->m_velocity = D3DXVECTOR3(0, 0, 0);
-			active = false;
 		}
 	}
 	return true;

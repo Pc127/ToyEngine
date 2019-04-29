@@ -2,7 +2,7 @@
 enum ColliderType
 {
 	SPHRER,
-	BOX,
+	AABB,
 	NONE
 };
 

@@ -1,5 +1,7 @@
 ﻿#pragma once
 #include "GameObjectClass.h"
+#include "FrictionForceClass.h"
+#include "ForceRegistryClass.h"
 
 class Ball:public GameObjectClass
 {

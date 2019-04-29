@@ -92,7 +92,7 @@ void PhysicsClass::UpdateVelocity(PhysicsComponentClass *pc1, PhysicsComponentCl
 	pc2->m_position += info.collidetime * pc2->m_velocity;
 
 	// 计算碰撞法线
-	D3DXVECTOR3 normal = pc2->m_position - pc1->m_position;
+	D3DXVECTOR3 normal = pc1->m_position - pc2->m_position;
 	D3DXVec3Normalize(&normal, &normal);
 	// 计算冲量
 	D3DXVECTOR3 impulsePerMass = normal*info.impluse;

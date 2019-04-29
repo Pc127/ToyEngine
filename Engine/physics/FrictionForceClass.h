@@ -4,6 +4,7 @@
 // 被ForceReigstry管理
 // 包括注册于注销
 // 作为力的抽象类
+// 摩擦力并不会主动失效 会一直保持active
 class FrictionForceClass:public ForceGeneratorClass
 {
 public:
