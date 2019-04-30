@@ -142,6 +142,9 @@
     <ClInclude Include="gameplay\Edge.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
+    <ClInclude Include="gameplay\Stick.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="system\SystemClass.cpp">
@@ -253,6 +256,9 @@
       <Filter>Source\physics</Filter>
     </ClCompile>
     <ClCompile Include="gameplay\Edge.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Stick.cpp">
       <Filter>Source\gameplay</Filter>
     </ClCompile>
   </ItemGroup>

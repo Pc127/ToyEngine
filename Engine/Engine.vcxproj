@@ -27,6 +27,7 @@
     <ClInclude Include="gameplay\Desktop.h" />
     <ClInclude Include="gameplay\Edge.h" />
     <ClInclude Include="gameplay\SceneOne.h" />
+    <ClInclude Include="gameplay\Stick.h" />
     <ClInclude Include="gameplay\Table.h" />
     <ClInclude Include="graphics\CameraClass.h" />
     <ClInclude Include="graphics\CartoonShaderClass.h" />
@@ -66,6 +67,7 @@
     <ClCompile Include="gameplay\Desktop.cpp" />
     <ClCompile Include="gameplay\Edge.cpp" />
     <ClCompile Include="gameplay\SceneOne.cpp" />
+    <ClCompile Include="gameplay\Stick.cpp" />
     <ClCompile Include="gameplay\Table.cpp" />
     <ClCompile Include="graphics\CameraClass.cpp" />
     <ClCompile Include="graphics\CartoonShaderClass.cpp" />

@@ -6,6 +6,7 @@
 #include "FrictionForceClass.h"
 #include "ForceRegistryClass.h"
 #include "Edge.h"
+#include "Stick.h"
 
 class SceneOne:public GameSceneClass
 {
