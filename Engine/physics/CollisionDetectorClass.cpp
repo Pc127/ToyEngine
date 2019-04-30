@@ -101,6 +101,7 @@ CollisionDetectorClass::CollisionInfo CollisionDetectorClass::DetectSphereAabb(P
 	D3DXVECTOR3 nearpoint;
 
 	// 圆心设为 更新之后的圆心
+	D3DXVECTOR3 oldpoint = sphere_physic->m_position;
 	D3DXVECTOR3 circlepoint = sphere_physic->m_position + deltatime * sphere_physic->m_velocity;
 
 	// 求normal 代表了点 在哪一个维度
@@ -173,9 +174,21 @@ CollisionDetectorClass::CollisionInfo CollisionDetectorClass::DetectSphereAabb(P
 
 	// 分离速度
 	float closingSpd = D3DXVec3Dot(&closingVel, &normal);
+	if (closingSpd < 0)
+		closingSpd = -closingSpd;
+	else if (closingSpd == 0)
+	{
+		info.hasCollide = false;
+		return info;
+	}
+
+	// 最近点到最初圆心的距离
+	diff = nearpoint;
+	diff -= oldpoint;
+	dis = D3DXVec3Length(&diff);
 
 	// 碰撞的时间
-	float collidetime = dis / closingSpd;
+	float collidetime = (dis-sphere_col->radius) / closingSpd;
 
 	info.hasCollide = true;
 	info.collidetime = collidetime;

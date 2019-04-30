@@ -28,28 +28,21 @@ void PhysicsClass::Shutdown()
 bool PhysicsClass::Frame(float deltatime)
 {
 	// 用来进行碰撞检测
-	for (GameObjectClass* gameobject : GameObjectListClass::GetSingleton()->m_GameObjects) {
-		if (gameobject->active && gameobject->m_PhysicsComponent) {
-			PhysicsComponentClass* pc = gameobject->m_PhysicsComponent;
-			// 对速度不为0的物体进行碰撞检测
-			if (true) {
-				// 滤去在该游戏物体之前的物体
-				bool index = false;
-				for (GameObjectClass* gameobject2 : GameObjectListClass::GetSingleton()->m_GameObjects) {
-					// 相同物体跳过检测
-					if (!index && gameobject2 == gameobject) {
-						index = true;
-						continue;
-					}
-					CollisionDetectorClass::CollisionInfo info;
-					info = CollisionDetectorClass::GetSingleton()->Detect(pc, gameobject2->m_PhysicsComponent, deltatime);
-					if (info.hasCollide) {
-						// 发生碰撞时的处理
-						UpdateVelocity(pc, gameobject2->m_PhysicsComponent, info);
-					};
+	auto gameobjs = GameObjectListClass::GetSingleton()->m_GameObjects;
+	for (auto it = gameobjs.begin(); it != gameobjs.end(); ++it ) {
+		if ((*it)->active && (*it)->m_PhysicsComponent) {
+			PhysicsComponentClass* pc = (*it)->m_PhysicsComponent;
+			// 滤去在该游戏物体之前的物体
+			// 避免一次碰撞检测进行两次
+			for (auto it2 = it; it2 != gameobjs.end();++it2) {
+				CollisionDetectorClass::CollisionInfo info;
+				PhysicsComponentClass* pc2 = (*it2)->m_PhysicsComponent;
+				info = CollisionDetectorClass::GetSingleton()->Detect(pc, pc2, deltatime);
+				if (info.hasCollide) {
+					// 发生碰撞时的处理
+					UpdateVelocity(pc, pc2, info);
 				}
 			}
-
 		}
 	}
 
@@ -127,4 +120,3 @@ void PhysicsClass::UpdateSphereAabbVelocity(PhysicsComponentClass *sphere, Physi
 	// 减去两倍的normal方向上的分量
 	sphere->m_velocity -= 2 * project* info.normal;
 }
-

@@ -7,7 +7,7 @@
 class AabbColliderClass:public ColliderClass
 {
 public:
-	AabbColliderClass(float);
+	AabbColliderClass(D3DXVECTOR3 min, D3DXVECTOR3 max);
 	~AabbColliderClass();
 public:
 	D3DXVECTOR3 min;

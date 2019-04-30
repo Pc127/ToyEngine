@@ -139,6 +139,9 @@
     <ClInclude Include="physics\AabbColliderClass.h">
       <Filter>Source\physics</Filter>
     </ClInclude>
+    <ClInclude Include="gameplay\Edge.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="system\SystemClass.cpp">
@@ -248,6 +251,9 @@
     </ClCompile>
     <ClCompile Include="physics\AabbColliderClass.cpp">
       <Filter>Source\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Edge.cpp">
+      <Filter>Source\gameplay</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

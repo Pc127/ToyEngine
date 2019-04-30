@@ -35,7 +35,7 @@ bool Ball::Initialize()
 	m_PhysicsComponent->m_collider = new SphereColliderClass(1);
 
 	// 加入摩擦力
-	ForceRegistryClass::GetSingleton()->AddForce(m_PhysicsComponent, new FrictionForceClass(1.0f));
+	// ForceRegistryClass::GetSingleton()->AddForce(m_PhysicsComponent, new FrictionForceClass(1.0f));
 
 	return true;
 }

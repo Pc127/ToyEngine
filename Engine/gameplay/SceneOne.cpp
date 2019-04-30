@@ -94,7 +94,7 @@ bool SceneOne::Initialize()
 	m_SceneObject.push_back(new Ball(L"../Engine/data/Ball16.dds"));
 	m_SceneObject[15]->Initialize();
 	m_SceneObject[15]->m_PhysicsComponent->m_position = D3DXVECTOR3(0, 0, 0);
-	m_SceneObject[15]->m_PhysicsComponent->m_velocity = D3DXVECTOR3(0, 0, 15);
+	m_SceneObject[15]->m_PhysicsComponent->m_velocity = D3DXVECTOR3(0, 0, 20);
 
 	// 桌子
 	m_SceneObject.push_back(new Table);
@@ -103,6 +103,31 @@ bool SceneOne::Initialize()
 	// 桌面
 	m_SceneObject.push_back(new Desktop);
 	m_SceneObject[17]->Initialize();
+
+	// 碰撞边框
+	// 左手侧
+	m_SceneObject.push_back(new Edge(D3DXVECTOR3(-26, -10, 53.2), D3DXVECTOR3(26, 10, 56.1)));
+	m_SceneObject[18]->Initialize();
+
+	// 右手侧
+	m_SceneObject.push_back(new Edge(D3DXVECTOR3(-26, -10, -56.1), D3DXVECTOR3(26, 10, -53.2)));
+	m_SceneObject[19]->Initialize();
+
+	// 左上侧
+	m_SceneObject.push_back(new Edge(D3DXVECTOR3(28.18, -10, 2.39), D3DXVECTOR3(31.18, 10, 52.05)));
+	m_SceneObject[20]->Initialize();
+
+	// 右上侧
+	m_SceneObject.push_back(new Edge(D3DXVECTOR3(28.18, -10, -52.05), D3DXVECTOR3(31.18, 10, -2.39)));
+	m_SceneObject[21]->Initialize();
+
+	// 右下侧
+	m_SceneObject.push_back(new Edge(D3DXVECTOR3(-31.18, -10, -52.05), D3DXVECTOR3(-28.18, 10, -2.39)));
+	m_SceneObject[22]->Initialize();
+
+	// 左下侧
+	m_SceneObject.push_back(new Edge(D3DXVECTOR3(-31.18, -10, 2.39), D3DXVECTOR3(-28.18, 10, 52.05)));
+	m_SceneObject[23]->Initialize();
 
 	return true;
 }
