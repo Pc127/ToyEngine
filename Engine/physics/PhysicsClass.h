@@ -20,6 +20,10 @@ public:
 private:
 	bool CollisionDetect();
 	void ExchangeVelocity(PhysicsComponentClass*, PhysicsComponentClass*);
+	// 更新碰撞后的速度
 	void UpdateVelocity(PhysicsComponentClass*, PhysicsComponentClass*, CollisionDetectorClass::CollisionInfo);
+	// 根据不同类型 来更新碰撞速度
+	void UpdateSphereVelocity(PhysicsComponentClass*, PhysicsComponentClass*, CollisionDetectorClass::CollisionInfo);
+	void UpdateSphereAabbVelocity(PhysicsComponentClass*, PhysicsComponentClass*, CollisionDetectorClass::CollisionInfo);
 	ForceRegistryClass* m_force;
 };

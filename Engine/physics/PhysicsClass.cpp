@@ -84,7 +84,19 @@ void PhysicsClass::ExchangeVelocity(PhysicsComponentClass *pc1, PhysicsComponent
 	pc2->m_velocity = velo;
 }
 
+// 判断碰撞 类型 进行速度更新
 void PhysicsClass::UpdateVelocity(PhysicsComponentClass *pc1, PhysicsComponentClass *pc2, CollisionDetectorClass::CollisionInfo info)
+{
+	if (pc1->m_collider->m_type == ColliderType::SPHRER && pc2->m_collider->m_type == ColliderType::SPHRER) {
+		UpdateSphereVelocity(pc1, pc2, info);
+	}else if (pc1->m_collider->m_type == ColliderType::SPHRER && pc2->m_collider->m_type == ColliderType::AABB) {
+		UpdateSphereAabbVelocity(pc1, pc2, info);
+	}else if (pc2->m_collider->m_type == ColliderType::SPHRER && pc1->m_collider->m_type == ColliderType::AABB) {
+		UpdateSphereAabbVelocity(pc2, pc1, info);
+	}
+}
+
+void PhysicsClass::UpdateSphereVelocity(PhysicsComponentClass *pc1, PhysicsComponentClass *pc2, CollisionDetectorClass::CollisionInfo info)
 {
 	// 调整相交位置 分离相交情况
 	// 更新到碰撞的位置
@@ -100,5 +112,19 @@ void PhysicsClass::UpdateVelocity(PhysicsComponentClass *pc1, PhysicsComponentCl
 	// 利用冲量更新速度
 	pc1->m_velocity += impulsePerMass / pc1->mass;
 	pc2->m_velocity -= impulsePerMass / pc2->mass;
+}
+
+void PhysicsClass::UpdateSphereAabbVelocity(PhysicsComponentClass *sphere, PhysicsComponentClass *aabb, CollisionDetectorClass::CollisionInfo info)
+{
+	// 调整相交位置 分离相交情况
+	// 更新到碰撞的位置
+	sphere->m_position += info.collidetime * sphere->m_velocity;
+	// aabb不更新位置
+
+	// 在法线方向上的投影
+	float project = D3DXVec3Dot(&sphere->m_velocity, &info.normal);
+
+	// 减去两倍的normal方向上的分量
+	sphere->m_velocity -= 2 * project* info.normal;
 }
 

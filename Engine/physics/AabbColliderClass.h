@@ -10,5 +10,6 @@ public:
 	AabbColliderClass(float);
 	~AabbColliderClass();
 public:
-	// D3DXVECTOR3;
+	D3DXVECTOR3 min;
+	D3DXVECTOR3 max;
 };
