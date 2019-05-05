@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gameobject\CameraClass.h" />
     <ClInclude Include="gameobject\GameObjectClass.h" />
     <ClInclude Include="gameobject\GameObjectListClass.h" />
     <ClInclude Include="gameobject\GameSceneClass.h" />
@@ -30,7 +31,6 @@
     <ClInclude Include="gameplay\SceneOne.h" />
     <ClInclude Include="gameplay\Stick.h" />
     <ClInclude Include="gameplay\Table.h" />
-    <ClInclude Include="graphics\CameraClass.h" />
     <ClInclude Include="graphics\CartoonShaderClass.h" />
     <ClInclude Include="graphics\ColorShaderClass.h" />
     <ClInclude Include="graphics\D3DClass.h" />
@@ -57,12 +57,12 @@
     <ClInclude Include="physics\PhysicsClass.h" />
     <ClInclude Include="physics\PhysicsComponentClass.h" />
     <ClInclude Include="physics\SphereColliderClass.h" />
-    <ClInclude Include="PlayerClass.h" />
     <ClInclude Include="system\InputClass.h" />
     <ClInclude Include="system\SystemClass.h" />
     <ClInclude Include="system\TimerClass.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="gameobject\CameraClass.cpp" />
     <ClCompile Include="gameobject\GameObjectClass.cpp" />
     <ClCompile Include="gameobject\GameObjectListClass.cpp" />
     <ClCompile Include="gameobject\GameSceneClass.cpp" />
@@ -74,7 +74,6 @@
     <ClCompile Include="gameplay\SceneOne.cpp" />
     <ClCompile Include="gameplay\Stick.cpp" />
     <ClCompile Include="gameplay\Table.cpp" />
-    <ClCompile Include="graphics\CameraClass.cpp" />
     <ClCompile Include="graphics\CartoonShaderClass.cpp" />
     <ClCompile Include="graphics\ColorShaderClass.cpp" />
     <ClCompile Include="graphics\D3DClass.cpp" />

@@ -3,9 +3,7 @@
 class CameraClass
 {
 public:
-	CameraClass();
-	CameraClass(const CameraClass&);
-	~CameraClass();
+	static CameraClass* GetSingleton();
 
 	void SetPosition(float, float, float);
 	void SetRotation(float, float, float);
@@ -16,6 +14,8 @@ public:
 	void Render();
 	void GetViewMatrix(D3DXMATRIX&);
 private:
+	CameraClass();
+	~CameraClass();
 	float m_positionX, m_positionY, m_positionZ;
 	float m_rotationX, m_rotationY, m_rotationZ;
 	D3DXMATRIX m_viewMatrix;

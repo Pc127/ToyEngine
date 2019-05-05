@@ -61,9 +61,6 @@
     <ClInclude Include="graphics\TextureShaderClass.h">
       <Filter>Source\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="graphics\CameraClass.h">
-      <Filter>Source\graphics</Filter>
-    </ClInclude>
     <ClInclude Include="graphics\CartoonShaderClass.h">
       <Filter>Source\graphics</Filter>
     </ClInclude>
@@ -154,7 +151,7 @@
     <ClInclude Include="gameplay\SceneMenu.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerClass.h">
+    <ClInclude Include="gameobject\CameraClass.h">
       <Filter>Source\gameobject</Filter>
     </ClInclude>
   </ItemGroup>
@@ -199,9 +196,6 @@
       <Filter>Source\graphics</Filter>
     </ClCompile>
     <ClCompile Include="graphics\D3DClass.cpp">
-      <Filter>Source\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="graphics\CameraClass.cpp">
       <Filter>Source\graphics</Filter>
     </ClCompile>
     <ClCompile Include="graphics\GraphicsComponentClass.cpp">
@@ -281,6 +275,9 @@
     </ClCompile>
     <ClCompile Include="gameplay\SceneMenu.cpp">
       <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobject\CameraClass.cpp">
+      <Filter>Source\gameobject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

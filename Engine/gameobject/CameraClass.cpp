@@ -13,13 +13,15 @@ CameraClass::CameraClass()
 	m_rotationZ = 0.0f;
 }
 
-CameraClass::CameraClass(const CameraClass &)
-{
-}
-
 
 CameraClass::~CameraClass()
 {
+}
+
+CameraClass * CameraClass::GetSingleton()
+{
+	static CameraClass instance;
+	return &instance;
 }
 
 void CameraClass::SetPosition(float x, float y, float z)

@@ -21,7 +21,7 @@ bool SystemClass::Initialize()
 	if (!m_Input) {
 		return false;
 	}
-	m_Input->Initialize();
+	m_Input->Initialize(m_hinstance, m_hwnd, screenWidth, screenHeight);
 
 	// 图形模型
 	m_Graphics = new GraphicsClass;
@@ -79,7 +79,7 @@ void SystemClass::Run()
 			DispatchMessage(&msg);
 		}
 
-		if (msg.message == WM_QUIT) {
+		if (m_Input->IsEscapePressed()) {
 			done = true;
 		}
 		else {
@@ -118,28 +118,16 @@ void SystemClass::Shutdown()
 
 LRESULT SystemClass::MessageHandler(HWND hwnd, UINT umsg, WPARAM wparam, LPARAM lparam)
 {
-	switch (umsg) {
-	case WM_KEYDOWN:
-	{
-		m_Input->KeyDown((unsigned int)wparam);
-		return 0;
-	}
-	case WM_KEYUP:
-	{
-		m_Input->KeyUp((unsigned int)wparam);
-		return 0;
-	}
-	default: {
-		return DefWindowProc(hwnd, umsg, wparam, lparam);
-	}
-    }
+	// 由direct input来处理输入输出
+	return DefWindowProc(hwnd, umsg, wparam, lparam);
 }
 
 bool SystemClass::Frame()
 {	
 	bool result = true;
 
-	if (m_Input->IsKeyDown(VK_ESCAPE)) {
+	result = m_Input->Frame();
+	if (!result) {
 		return false;
 	}
 

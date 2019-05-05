@@ -25,7 +25,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	}
 
 	// 相机模块
-	m_Camera = new CameraClass;
+	m_Camera = CameraClass::GetSingleton();
 	if (!m_Camera) {
 		return false;
 	}
@@ -97,11 +97,6 @@ void GraphicsClass::Shutdown()
 		m_Light = 0;
 	}
 
-	if (m_Camera)
-	{
-		delete m_Camera;
-		m_Camera = 0;
-	}
 	if (m_D3D) {
 		m_D3D->Shutdown();
 		delete m_D3D;
