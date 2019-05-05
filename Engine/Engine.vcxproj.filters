@@ -145,6 +145,18 @@
     <ClInclude Include="gameplay\Stick.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
+    <ClInclude Include="graphics\FontClass.h">
+      <Filter>Source\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\FontShader.h">
+      <Filter>Source\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\SceneMenu.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerClass.h">
+      <Filter>Source\gameobject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="system\SystemClass.cpp">
@@ -261,6 +273,15 @@
     <ClCompile Include="gameplay\Stick.cpp">
       <Filter>Source\gameplay</Filter>
     </ClCompile>
+    <ClCompile Include="graphics\FontClass.cpp">
+      <Filter>Source\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\FontShader.cpp">
+      <Filter>Source\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\SceneMenu.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader\light.vs">
@@ -285,6 +306,12 @@
       <Filter>Resource\shader</Filter>
     </None>
     <None Include="shader\light.ps">
+      <Filter>Resource\shader</Filter>
+    </None>
+    <None Include="shader\font.ps">
+      <Filter>Resource\shader</Filter>
+    </None>
+    <None Include="shader\font.vs">
       <Filter>Resource\shader</Filter>
     </None>
   </ItemGroup>
