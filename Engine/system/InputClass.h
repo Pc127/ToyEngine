@@ -10,10 +10,7 @@
 class InputClass
 {
 public:
-	InputClass();
-	InputClass(const InputClass&);
-	~InputClass();
-
+	static InputClass* GetSingleton();
 	bool Initialize(HINSTANCE, HWND, int, int);
 	void Shutdown();
 	bool Frame();
@@ -32,10 +29,14 @@ public:
 	bool IsLeftMouseButtonDown();
 
 private:
+	InputClass();
+	~InputClass();
+
 	bool ReadKeyboard();
 	bool ReadMouse();
 	void ProcessInput();
-
+public:
+	int m_screenWidth, m_screenHeight;
 private:
 	// 直接输入
 	// 键盘与鼠标
@@ -47,7 +48,5 @@ private:
 	unsigned char m_keyboardState[256];
 	// 鼠标状态
 	DIMOUSESTATE m_mouseState;
-
-	int m_screenWidth, m_screenHeight;
 	int m_mouseX, m_mouseY;
 };

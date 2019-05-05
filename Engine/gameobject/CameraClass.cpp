@@ -2,6 +2,51 @@
 
 
 
+CameraClass::Ray CameraClass::GetPickingRay(int mouseX, int mouseY, int m_screenWidth, int m_screenHeight)
+{
+	float pointX, pointY;
+	D3DXMATRIX projectionMatrix, viewMatrix, inverseViewMatrix, worldMatrix, translateMatrix, inverseWorldMatrix;
+	D3DXVECTOR3 direction, origin, rayOrigin, rayDirection;
+	bool intersect, result;
+
+	// 光标进行归一化
+	pointX = ((2.0f * (float)mouseX) / (float)m_screenWidth) - 1.0f;
+	pointY = (((2.0f * (float)mouseY) / (float)m_screenHeight) - 1.0f) * -1.0f;
+
+	// 调整纵横比
+	GetProjectionMatrix(projectionMatrix);
+	pointX = pointX / projectionMatrix._11;
+	pointY = pointY / projectionMatrix._22;
+
+	// 获取试图矩阵的逆矩阵
+	GetViewMatrix(viewMatrix);
+	D3DXMatrixInverse(&inverseViewMatrix, NULL, &viewMatrix);
+
+	// 从试图矩阵的逆 中获取方向
+	direction.x = (pointX * inverseViewMatrix._11) + (pointY * inverseViewMatrix._21) + inverseViewMatrix._31;
+	direction.y = (pointX * inverseViewMatrix._12) + (pointY * inverseViewMatrix._22) + inverseViewMatrix._32;
+	direction.z = (pointX * inverseViewMatrix._13) + (pointY * inverseViewMatrix._23) + inverseViewMatrix._33;
+
+	// 相机位置为光线的原点
+	origin = GetPosition();
+
+	// 翻转世界矩阵
+	D3DXMatrixIdentity(&worldMatrix);
+	D3DXMatrixInverse(&inverseWorldMatrix, NULL, &worldMatrix);
+
+	D3DXVec3TransformCoord(&rayOrigin, &origin, &inverseWorldMatrix);
+	D3DXVec3TransformNormal(&rayDirection, &direction, &inverseWorldMatrix);
+
+	// 单位化方向
+	D3DXVec3Normalize(&rayDirection, &rayDirection);
+
+	Ray ray;
+	ray.origin = rayOrigin;
+	ray.direction = rayDirection;
+
+	return ray;
+}
+
 CameraClass::CameraClass()
 {
 	m_positionX = 0.0f;
@@ -99,5 +144,29 @@ void CameraClass::Render()
 void CameraClass::GetViewMatrix(D3DXMATRIX &viewMatrix)
 {
 	viewMatrix = m_viewMatrix;
+	return;
+}
+
+void CameraClass::GetProjectionMatrix(D3DXMATRIX &projectionMatrix)
+{
+	projectionMatrix = m_projectionMatrix;
+	return;
+}
+
+void CameraClass::SetProjectionMatrix(D3DXMATRIX &projectionMatrix)
+{
+	m_projectionMatrix = projectionMatrix;
+	return;
+}
+
+void CameraClass::GetOrthoMatrix(D3DXMATRIX &orthoMatrix)
+{
+	orthoMatrix = m_orthoMatrix;
+	return;
+}
+
+void CameraClass::SetOrthoMatrix(D3DXMATRIX &orthoMatrix)
+{
+	m_orthoMatrix = orthoMatrix;
 	return;
 }

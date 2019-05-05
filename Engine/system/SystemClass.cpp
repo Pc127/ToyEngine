@@ -14,10 +14,11 @@ bool SystemClass::Initialize()
 	screenHeight = 0;
 	screenWidth = 0;
 
+	// 获取屏幕宽高
 	InitializeWindows(screenWidth, screenHeight);
 
 	// 输入输出模块
-	m_Input = new InputClass;
+	m_Input = InputClass::GetSingleton();
 	if (!m_Input) {
 		return false;
 	}
@@ -55,12 +56,9 @@ bool SystemClass::Initialize()
 	
 	//初始化场景
 	m_SceneSystem->SetScene("Meun", new SceneMenu);
-	
 	m_SceneSystem->Initialize("Meun");
 
-	
 	m_SceneSystem->SetScene("Play", new SceneOne);
-
 	m_SceneSystem->LoadScene("Play");
 
 	return true;
@@ -102,7 +100,6 @@ void SystemClass::Shutdown()
 	}
 
 	if (m_Input) {
-		delete m_Input;
 		m_Input = 0;
 	}
 
@@ -143,6 +140,12 @@ bool SystemClass::Frame()
 
 	result = m_Graphics->Frame();
 	if (!result){
+		return false;
+	}
+
+	// 更新游戏逻辑
+	result = m_SceneSystem->Frame();
+	if (!result) {
 		return false;
 	}
 

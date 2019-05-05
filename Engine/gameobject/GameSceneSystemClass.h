@@ -29,6 +29,9 @@ public:
 	// 加载进入新的场景
 	void LoadScene(string);
 
+	// 调用该场景中 所有游戏物体的frame
+	bool Frame();
+
 public:
 	string m_current;
 	map<string, GameSceneClass*> m_Scenes;

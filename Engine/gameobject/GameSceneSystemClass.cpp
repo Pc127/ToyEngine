@@ -50,4 +50,16 @@ void GameSceneSystemClass::LoadScene(string name)
 	m_Scenes[m_current]->Initialize();
 }
 
+// 调用当前game list中 所有物体的frame逻辑
+bool GameSceneSystemClass::Frame()
+{
+	auto objs = GameObjectListClass::GetSingleton()->m_GameObjects;
+
+	for (auto obj : objs) {
+		obj->Frame();
+	}
+
+	return true;
+}
+
 

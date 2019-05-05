@@ -108,7 +108,6 @@ void GraphicsClass::Shutdown()
 bool GraphicsClass::Frame()
 {
 	bool result;
-	// 设置旋转
 
 	result = Render();
 	if (!result) {
@@ -127,9 +126,8 @@ bool GraphicsClass::Render()
 	m_Camera->Render();
 	// 从相机设置视图矩阵
 	m_Camera->GetViewMatrix(viewMatrix);
-	// 从dxd设置世界与投影矩阵
-	m_D3D->GetWorldMatrix(worldMatrix);
-	m_D3D->GetProjectionMatrix(projectionMatrix);
+	// 从相机设置投影矩阵
+	m_Camera->GetProjectionMatrix(projectionMatrix);
 
 	
 	// 进行物理系统的更新
@@ -157,7 +155,6 @@ bool GraphicsClass::Render()
 			}
 
 			// 渲染正面
-
 			m_D3D->RenderFront();
 			result = m_LightShader->Render(m_D3D->GetDeviceContext(), gc->m_Model->GetIndexCount(),
 				worldMatrix, viewMatrix, projectionMatrix, gc->m_Texture, m_Light->GetDirection(), m_Light->GetAmbientColor(), m_Light->GetDiffuseColor(),
@@ -165,9 +162,6 @@ bool GraphicsClass::Render()
 			if (!result) {
 				return false;
 			}
-
-			
-			
 		}
 	}
 

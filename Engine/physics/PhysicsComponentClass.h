@@ -24,9 +24,6 @@ public:
 	// 根据位置获得世界矩阵
 	void GetWorldMatrix(D3DXMATRIX&);
 public:
-	// 变量的get/set先不写了吧
-
-public:
 	// 该组件是否激活
 	bool active;
 
@@ -40,8 +37,8 @@ public:
 	float mass = 1;
 
 	// 旋转
+	// 暂定设置为绕Y轴旋转
 	float m_rotation;
-	float m_rotationSpeed;
 
 	// 物理组件的碰撞体
 	ColliderClass* m_collider;

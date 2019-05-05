@@ -30,8 +30,6 @@ bool Table::Initialize()
 	// 速度静止
 	m_PhysicsComponent->Initialize();
 	m_PhysicsComponent->m_position = D3DXVECTOR3(0, 0, 0);
-	// m_PhysicsComponent->m_collider = new SphereColliderClass(1);
-
 
 	return true;
 }

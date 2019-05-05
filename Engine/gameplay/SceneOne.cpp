@@ -90,11 +90,11 @@ bool SceneOne::Initialize()
 	m_SceneObject[14]->Initialize();
 	m_SceneObject[14]->m_PhysicsComponent->m_position = D3DXVECTOR3(0, 0, 30);
 
-	//16
+	// 白球
 	m_SceneObject.push_back(new Ball(L"../Engine/data/Ball16.dds"));
 	m_SceneObject[15]->Initialize();
 	m_SceneObject[15]->m_PhysicsComponent->m_position = D3DXVECTOR3(0, 0, 0);
-	m_SceneObject[15]->m_PhysicsComponent->m_velocity = D3DXVECTOR3(0, 0, 15);
+	m_SceneObject[15]->m_PhysicsComponent->m_velocity = D3DXVECTOR3(0, 0, 0);
 
 	// 桌子
 	m_SceneObject.push_back(new Table);
@@ -130,7 +130,7 @@ bool SceneOne::Initialize()
 	m_SceneObject[23]->Initialize();
 
 	// 台球杆
-	m_SceneObject.push_back(new Stick());
+	m_SceneObject.push_back(new Stick(m_SceneObject[15]));
 	m_SceneObject[24]->Initialize();
 
 	return true;

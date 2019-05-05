@@ -290,10 +290,13 @@ bool D3DClass::Initialize(int screenWidth, int screenHeight, bool vsync, HWND hw
 
 	// 创建投影矩阵
 	D3DXMatrixPerspectiveFovLH(&m_projectionMatrix, fieldOfView, screenAspect, screenNear, screenDepth);
+	CameraClass::GetSingleton()->SetProjectionMatrix(m_projectionMatrix);
 
 	D3DXMatrixIdentity(&m_worldMatrix);
 
+	// 正交投影矩阵
 	D3DXMatrixOrthoLH(&m_orthoMatrix, (float)screenWidth, (float)screenHeight, screenNear, screenDepth);
+	CameraClass::GetSingleton()->SetOrthoMatrix(m_orthoMatrix);
 
 	return true;
 }

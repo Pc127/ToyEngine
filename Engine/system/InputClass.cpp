@@ -7,16 +7,16 @@ InputClass::InputClass()
 	m_mouse = 0;
 }
 
-
-InputClass::InputClass(const InputClass& other)
-{
-}
-
-
 InputClass::~InputClass()
 {
 }
 
+
+InputClass * InputClass::GetSingleton()
+{
+	static InputClass instance;
+	return &instance;
+}
 
 bool InputClass::Initialize(HINSTANCE hinstance, HWND hwnd, int screenWidth, int screenHeight)
 {
