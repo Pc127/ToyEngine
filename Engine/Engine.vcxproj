@@ -31,6 +31,7 @@
     <ClInclude Include="gameplay\SceneOne.h" />
     <ClInclude Include="gameplay\Stick.h" />
     <ClInclude Include="gameplay\Table.h" />
+    <ClInclude Include="graphics\Bitmap.h" />
     <ClInclude Include="graphics\CartoonShaderClass.h" />
     <ClInclude Include="graphics\ColorShaderClass.h" />
     <ClInclude Include="graphics\D3DClass.h" />
@@ -74,6 +75,7 @@
     <ClCompile Include="gameplay\SceneOne.cpp" />
     <ClCompile Include="gameplay\Stick.cpp" />
     <ClCompile Include="gameplay\Table.cpp" />
+    <ClCompile Include="graphics\Bitmap.cpp" />
     <ClCompile Include="graphics\CartoonShaderClass.cpp" />
     <ClCompile Include="graphics\ColorShaderClass.cpp" />
     <ClCompile Include="graphics\D3DClass.cpp" />
