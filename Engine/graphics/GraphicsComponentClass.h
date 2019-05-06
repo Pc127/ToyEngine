@@ -17,6 +17,7 @@ public:
 	~GraphicsComponentClass() = default;
 
 	bool Initialize(char*, WCHAR*);
+//	bool Initialize()
 	void Shutdown();
 public:
 	ModelClass* m_Model;

@@ -72,6 +72,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	ModelMapClass::GetSingleton()->Initialize(m_D3D->GetDevice());
 	TextureMapClass::GetSingleton()->Initialize(m_D3D->GetDevice());
 
+
 	return true;
 }
 
