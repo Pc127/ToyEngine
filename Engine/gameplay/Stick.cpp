@@ -1,4 +1,4 @@
-﻿﻿#include "Stick.h"
+﻿#include "Stick.h"
 
 Stick::Stick(GameObjectClass *ball)
 {
