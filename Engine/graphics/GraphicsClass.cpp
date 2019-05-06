@@ -71,7 +71,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	// 纹理与模型的单例模块 
 	ModelMapClass::GetSingleton()->Initialize(m_D3D->GetDevice());
 	TextureMapClass::GetSingleton()->Initialize(m_D3D->GetDevice());
-
+	
 
 	return true;
 }

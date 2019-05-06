@@ -1,4 +1,4 @@
-﻿#include "Stick.h"
+﻿﻿#include "Stick.h"
 
 Stick::Stick(GameObjectClass *ball)
 {
@@ -34,7 +34,7 @@ bool Stick::Initialize()
 bool Stick::Frame()
 {
 	// 于球杆的距离
-	float distance = -1;
+	float distance = 1;
 
 
 	int mouseX, mouseY;
@@ -56,7 +56,7 @@ bool Stick::Frame()
 
 	// 计算方向
 	// 射点到白球
-	D3DXVECTOR3 direction = ballPostion - rayPostion;
+	D3DXVECTOR3 direction = rayPostion - ballPostion;
 	// 修正误差
 	direction.y = 0;
 	D3DXVec3Normalize(&direction, &direction);
@@ -72,7 +72,7 @@ bool Stick::Frame()
 		angle = 2*D3DX_PI - angle;
 	}
 
-	m_PhysicsComponent->m_position = ballPostion - direction*distance;
+	m_PhysicsComponent->m_position = ballPostion + direction*distance;
 	m_PhysicsComponent->m_rotation = angle;
 
 	if (InputClass::GetSingleton()->IsLeftMouseButtonDown()) {

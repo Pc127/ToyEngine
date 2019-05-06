@@ -154,8 +154,8 @@
     <ClInclude Include="gameobject\CameraClass.h">
       <Filter>Source\gameobject</Filter>
     </ClInclude>
-    <ClInclude Include="graphics\Bitmap.h">
-      <Filter>Source\graphics</Filter>
+    <ClInclude Include="gameplay\Bitmap.h">
+      <Filter>Source\gameplay</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -282,8 +282,8 @@
     <ClCompile Include="gameobject\CameraClass.cpp">
       <Filter>Source\gameobject</Filter>
     </ClCompile>
-    <ClCompile Include="graphics\Bitmap.cpp">
-      <Filter>Source\graphics</Filter>
+    <ClCompile Include="gameplay\Bitmap.cpp">
+      <Filter>Source\gameplay</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
