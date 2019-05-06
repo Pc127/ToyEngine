@@ -154,6 +154,9 @@
     <ClInclude Include="gameobject\CameraClass.h">
       <Filter>Source\gameobject</Filter>
     </ClInclude>
+    <ClInclude Include="graphics\Bitmap.h">
+      <Filter>Source\graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="system\SystemClass.cpp">
@@ -278,6 +281,9 @@
     </ClCompile>
     <ClCompile Include="gameobject\CameraClass.cpp">
       <Filter>Source\gameobject</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\Bitmap.cpp">
+      <Filter>Source\graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
