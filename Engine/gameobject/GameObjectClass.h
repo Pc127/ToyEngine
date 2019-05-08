@@ -18,6 +18,9 @@ public:
 	// 会调用两个组件的shutdown函数
 	void Shutdown();
 
+	// 碰撞事件函数
+	virtual void OnCollision(GameObjectClass*);
+
 public:
 	// 是否被激活
 	bool active;

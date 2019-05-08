@@ -35,13 +35,20 @@ bool PhysicsClass::Frame(float deltatime)
 			// 滤去在该游戏物体之前的物体
 			// 避免一次碰撞检测进行两次
 			for (auto it2 = it; it2 != gameobjs.end();++it2) {
-				CollisionDetectorClass::CollisionInfo info;
-				PhysicsComponentClass* pc2 = (*it2)->m_PhysicsComponent;
-				info = CollisionDetectorClass::GetSingleton()->Detect(pc, pc2, deltatime);
-				if (info.hasCollide) {
-					// 发生碰撞时的处理
-					UpdateVelocity(pc, pc2, info);
-				}
+				if ((*it2)->active && (*it2)->m_PhysicsComponent) {
+					CollisionDetectorClass::CollisionInfo info;
+					PhysicsComponentClass* pc2 = (*it2)->m_PhysicsComponent;
+					info = CollisionDetectorClass::GetSingleton()->Detect(pc, pc2, deltatime);
+					if (info.hasCollide) {
+						// 质量大于0的时候 双方进行速度处理
+						// 发生碰撞时的处理
+						if(pc->mass>0&&pc2->mass>0)
+							UpdateVelocity(pc, pc2, info);
+						// 调用双方的碰撞处理函数
+						(*it)->OnCollision(*(it2));
+						(*it2)->OnCollision(*(it));
+					}	
+				}		
 			}
 		}
 	}

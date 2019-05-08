@@ -7,6 +7,8 @@
 #include "ForceRegistryClass.h"
 #include "Edge.h"
 #include "Stick.h"
+#include "Monitor.h"
+#include "Hole.h"
 
 class SceneOne:public GameSceneClass
 {

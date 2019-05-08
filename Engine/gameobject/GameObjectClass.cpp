@@ -36,3 +36,7 @@ void GameObjectClass::Shutdown()
 		m_PhysicsComponent = 0;
 	}
 }
+
+void GameObjectClass::OnCollision(GameObjectClass *)
+{
+}

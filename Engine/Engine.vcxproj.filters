@@ -157,6 +157,12 @@
     <ClInclude Include="gameplay\Bitmap.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
+    <ClInclude Include="gameplay\Monitor.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\Hole.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="system\SystemClass.cpp">
@@ -283,6 +289,12 @@
       <Filter>Source\gameobject</Filter>
     </ClCompile>
     <ClCompile Include="gameplay\Bitmap.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Monitor.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Hole.cpp">
       <Filter>Source\gameplay</Filter>
     </ClCompile>
   </ItemGroup>
