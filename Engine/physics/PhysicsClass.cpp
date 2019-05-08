@@ -49,14 +49,25 @@ bool PhysicsClass::Frame(float deltatime)
 	// 处理受力 与 速度更新
 	m_force->Frame(deltatime);
 
-	// 用来更新位置
+	// 用来更新位置 与 方向
 	for (GameObjectClass* gameobject : GameObjectListClass::GetSingleton()->m_GameObjects) {
 		if (gameobject->active && gameobject->m_PhysicsComponent) {
 
 			PhysicsComponentClass* pc = gameobject->m_PhysicsComponent;
-
 			pc->m_position += deltatime*pc->m_velocity;
 
+			D3DXQUATERNION inverse;
+			D3DXQuaternionInverse(&inverse, &pc->m_orientation);
+
+			// rotation是0的话 进行单位化
+			if (D3DXQuaternionLength(&pc->m_rotation) == 0) {
+				D3DXQuaternionIdentity(&pc->m_rotation);
+			}
+
+			// 通过旋转速度 更新方向
+			pc->m_orientation *= deltatime*pc->m_rotation;
+			// 单位化
+			D3DXQuaternionNormalize(&pc->m_orientation, &pc->m_orientation);
 		}
 	}
 

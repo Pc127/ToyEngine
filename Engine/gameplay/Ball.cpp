@@ -40,7 +40,21 @@ bool Ball::Initialize()
 	return true;
 }
 
+// 更新旋转速度
 bool Ball::Frame()
 {
-	return false;
+	// 转轴
+	D3DXVECTOR3 direction;
+
+	// 计算旋转方向
+	D3DXVec3Cross(&direction, &D3DXVECTOR3(0, 1, 0), &m_PhysicsComponent->m_velocity);
+
+	float speed;
+	speed = D3DXVec3Length(&m_PhysicsComponent->m_velocity);
+
+	D3DXVec3Normalize(&direction, &direction);
+
+	D3DXQuaternionRotationAxis(&m_PhysicsComponent->m_rotation, &direction, speed/100);
+	D3DXQuaternionNormalize(&m_PhysicsComponent->m_rotation, &m_PhysicsComponent->m_rotation);
+	return true;
 }

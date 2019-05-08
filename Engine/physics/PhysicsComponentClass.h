@@ -33,12 +33,16 @@ public:
 	// 速度
 	D3DXVECTOR3 m_velocity;
 
+	// 方向
+	// 要保证是单位矩阵
+	D3DXQUATERNION m_orientation;
+
+	// 旋转速度
+	// 要保证为对象坐标
+	D3DXQUATERNION m_rotation;
+
 	// 质量
 	float mass = 1;
-
-	// 旋转
-	// 暂定设置为绕Y轴旋转
-	float m_rotation;
 
 	// 物理组件的碰撞体
 	ColliderClass* m_collider;
