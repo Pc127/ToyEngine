@@ -7,8 +7,9 @@
 //#include "TextureShaderClass.h"
 #include "ModelMapClass.h"
 #include "TextureMapClass.h"
-
-
+#include"bitmapclass.h"
+#include"../BitmapMapClass.h"
+#include"../BitmapStruct.h"
 class GraphicsComponentClass
 {
 public:
@@ -17,9 +18,10 @@ public:
 	~GraphicsComponentClass() = default;
 
 	bool Initialize(char*, WCHAR*);
-//	bool Initialize()
+	bool Initialize(bitmapStruct*,WCHAR*);
 	void Shutdown();
 public:
 	ModelClass* m_Model;
 	ID3D11ShaderResourceView* m_Texture;
+	BitmapClass* m_Bitmap;
 };

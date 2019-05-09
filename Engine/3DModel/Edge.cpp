@@ -17,7 +17,7 @@ bool Edge::Initialize()
 	Register();
 
 	bool result;
-
+	this->type = 1;
 	/*m_GraphicsComponent = new GraphicsComponentClass;
 
 	m_GraphicsComponent->Initialize("../Engine/data/ball.txt", L"../Engine/data/Ball16.dds");*/

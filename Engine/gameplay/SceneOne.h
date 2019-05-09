@@ -7,7 +7,7 @@
 #include "ForceRegistryClass.h"
 #include "Edge.h"
 #include "Stick.h"
-
+#include"../UI/Title.h"
 class SceneOne:public GameSceneClass
 {
 public:

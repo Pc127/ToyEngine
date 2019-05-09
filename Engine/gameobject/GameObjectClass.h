@@ -21,6 +21,8 @@ public:
 public:
 	// 是否被激活
 	bool active;
+	//贴图还是3D模型
+	bool type;
 
 	// 渲染组件
 	GraphicsComponentClass* m_GraphicsComponent;

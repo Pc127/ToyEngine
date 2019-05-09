@@ -19,7 +19,7 @@ bool Table::Initialize()
 	Register();
 
 	bool result;
-
+	this->type = 1;
 	m_GraphicsComponent = new GraphicsComponentClass;
 
 	m_GraphicsComponent->Initialize("../Engine/data/Table.txt", L"../Engine/data/Table.dds");

@@ -7,6 +7,7 @@ GraphicsClass::GraphicsClass()
 
 	m_LightShader = 0;
 	m_Light = 0;
+	m_TextureShader = 0;
 	m_CartoonShader = 0;
 }
 
@@ -68,9 +69,23 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 		return false;
 	}
 
+	m_TextureShader = new TextureShaderClass;
+	if (!m_TextureShader)
+	{
+		return false;
+	}
+
+	// Initialize the texture shader object.
+	result = m_TextureShader->Initialize(m_D3D->GetDevice(), hwnd);
+	if (!result)
+	{
+		MessageBox(hwnd, L"Could not initialize the texture shader object.", L"Error", MB_OK);
+		return false;
+	}
 	// 纹理与模型的单例模块 
 	ModelMapClass::GetSingleton()->Initialize(m_D3D->GetDevice());
 	TextureMapClass::GetSingleton()->Initialize(m_D3D->GetDevice());
+	BitmapMapClass::GetSingleton()->Initialize(m_D3D->GetDevice());
 	
 
 	return true;
@@ -119,7 +134,7 @@ bool GraphicsClass::Frame()
 
 bool GraphicsClass::Render()
 {
-	D3DXMATRIX viewMatrix, projectionMatrix, worldMatrix;
+	D3DXMATRIX viewMatrix, projectionMatrix, worldMatrix, orthoMatrix;
 	bool result;
 	// 设置背景颜色
 	m_D3D->BeginScene(0.0f, 0.5f, 0.5f, 1.0f);
@@ -136,7 +151,7 @@ bool GraphicsClass::Render()
 
 	// 模型准备数据
  	for (GameObjectClass* gameobject : GameObjectListClass::GetSingleton()->m_GameObjects) {
-		if (gameobject->active && gameobject->m_GraphicsComponent) {
+		if (gameobject->active && gameobject->m_GraphicsComponent&&gameobject->type==1) {
 
 			GraphicsComponentClass* gc = gameobject->m_GraphicsComponent;
 
@@ -163,6 +178,33 @@ bool GraphicsClass::Render()
 			if (!result) {
 				return false;
 			}
+		}
+		if(gameobject->active && gameobject->m_GraphicsComponent&&gameobject->type == 0)
+		{
+			m_D3D->GetOrthoMatrix(orthoMatrix);
+
+
+			GraphicsComponentClass* gc = gameobject->m_GraphicsComponent;
+
+			// 获取世界矩阵
+			if (gameobject->m_PhysicsComponent) {
+				gameobject->m_PhysicsComponent->GetWorldMatrix(worldMatrix);
+			}
+
+			m_D3D->TurnZBufferOff();
+			result=gc->m_Bitmap->Render(m_D3D->GetDeviceContext(), 200, 200);
+			if (!result)
+			{
+				return false;
+			}
+			
+
+			result = m_TextureShader->Render(m_D3D->GetDeviceContext(), gc->m_Bitmap->GetIndexCount(), worldMatrix, viewMatrix, orthoMatrix, gc->m_Bitmap->GetTexture());
+			if (!result)
+			{
+				return false;
+			}
+			m_D3D->TurnZBufferOn();
 		}
 	}
 

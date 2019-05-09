@@ -13,12 +13,13 @@ SceneOne::~SceneOne()
 
 bool SceneOne::Initialize()
 {
+	
 	//1
-	m_SceneObject.push_back(new Ball(L"../Engine/data/Ball4.dds"));
+	m_SceneObject.push_back(new Ball(L"../Engine/data/Ball16.dds"));
 	m_SceneObject[0]->Initialize();
 	m_SceneObject[0]->m_PhysicsComponent->m_position = D3DXVECTOR3(0, 0, 40);
 	
-
+/*
 	//2 
 	m_SceneObject.push_back(new Ball(L"../Engine/data/Ball14.dds"));
 	m_SceneObject[1]->Initialize();
@@ -96,15 +97,15 @@ bool SceneOne::Initialize()
 	m_SceneObject[15]->m_PhysicsComponent->m_position = D3DXVECTOR3(0, 0, 0);
 	m_SceneObject[15]->m_PhysicsComponent->m_velocity = D3DXVECTOR3(0, 0, 0);
 
-	// 桌子
+*/	// 桌子
 	m_SceneObject.push_back(new Table);
-	m_SceneObject[16]->Initialize();
+	m_SceneObject[1]->Initialize();
 
 	// 桌面
 	m_SceneObject.push_back(new Desktop);
-	m_SceneObject[17]->Initialize();
+	m_SceneObject[2]->Initialize();
 
-	// 碰撞边框
+/*	// 碰撞边框
 	// 左手侧
 	m_SceneObject.push_back(new Edge(D3DXVECTOR3(-26, -10, 53.2), D3DXVECTOR3(26, 10, 56.1)));
 	m_SceneObject[18]->Initialize();
@@ -132,8 +133,10 @@ bool SceneOne::Initialize()
 	// 台球杆
 	m_SceneObject.push_back(new Stick(m_SceneObject[15]));
 	m_SceneObject[24]->Initialize();
-
-	return true;
+	
+	m_SceneObject.push_back(new Title(L"../Engine/data/Title.dds"));
+	m_SceneObject[25]->Initialize();
+*/	return true;
 }
 
 bool SceneOne::Frame()

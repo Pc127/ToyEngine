@@ -6,7 +6,6 @@
 #include "FrictionForceClass.h"
 #include "ForceRegistryClass.h"
 #include"Edge.h"
-#include"Bitmap.h"
 class SceneMenu :public GameSceneClass
 {
 public:

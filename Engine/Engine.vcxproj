@@ -19,24 +19,26 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="3DModel\Ball.h" />
+    <ClInclude Include="3DModel\Desktop.h" />
+    <ClInclude Include="3DModel\Edge.h" />
+    <ClInclude Include="3DModel\Stick.h" />
+    <ClInclude Include="3DModel\Table.h" />
+    <ClInclude Include="BitmapMapClass.h" />
+    <ClInclude Include="BitmapStruct.h" />
     <ClInclude Include="gameobject\CameraClass.h" />
     <ClInclude Include="gameobject\GameObjectClass.h" />
     <ClInclude Include="gameobject\GameObjectListClass.h" />
     <ClInclude Include="gameobject\GameSceneClass.h" />
     <ClInclude Include="gameobject\GameSceneSystemClass.h" />
-    <ClInclude Include="gameplay\Ball.h" />
-    <ClInclude Include="gameplay\Bitmap.h" />
-    <ClInclude Include="gameplay\Desktop.h" />
-    <ClInclude Include="gameplay\Edge.h" />
     <ClInclude Include="gameplay\SceneMenu.h" />
     <ClInclude Include="gameplay\SceneOne.h" />
-    <ClInclude Include="gameplay\Stick.h" />
-    <ClInclude Include="gameplay\Table.h" />
+    <ClInclude Include="graphics\bitmapclass.h" />
     <ClInclude Include="graphics\CartoonShaderClass.h" />
     <ClInclude Include="graphics\ColorShaderClass.h" />
     <ClInclude Include="graphics\D3DClass.h" />
     <ClInclude Include="graphics\FontClass.h" />
-    <ClInclude Include="graphics\FontShader.h" />
+    <ClInclude Include="graphics\FontShaderClass.h" />
     <ClInclude Include="graphics\GraphicsClass.h" />
     <ClInclude Include="graphics\GraphicsComponentClass.h" />
     <ClInclude Include="graphics\LightClass.h" />
@@ -61,26 +63,28 @@
     <ClInclude Include="system\InputClass.h" />
     <ClInclude Include="system\SystemClass.h" />
     <ClInclude Include="system\TimerClass.h" />
+    <ClInclude Include="UI\Title.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="3DModel\Ball.cpp" />
+    <ClCompile Include="3DModel\Desktop.cpp" />
+    <ClCompile Include="3DModel\Edge.cpp" />
+    <ClCompile Include="3DModel\Stick.cpp" />
+    <ClCompile Include="3DModel\Table.cpp" />
+    <ClCompile Include="BitmapMapClass.cpp" />
     <ClCompile Include="gameobject\CameraClass.cpp" />
     <ClCompile Include="gameobject\GameObjectClass.cpp" />
     <ClCompile Include="gameobject\GameObjectListClass.cpp" />
     <ClCompile Include="gameobject\GameSceneClass.cpp" />
     <ClCompile Include="gameobject\GameSceneSystemClass.cpp" />
-    <ClCompile Include="gameplay\Ball.cpp" />
-    <ClCompile Include="gameplay\Bitmap.cpp" />
-    <ClCompile Include="gameplay\Desktop.cpp" />
-    <ClCompile Include="gameplay\Edge.cpp" />
     <ClCompile Include="gameplay\SceneMenu.cpp" />
     <ClCompile Include="gameplay\SceneOne.cpp" />
-    <ClCompile Include="gameplay\Stick.cpp" />
-    <ClCompile Include="gameplay\Table.cpp" />
+    <ClCompile Include="graphics\bitmapclass.cpp" />
     <ClCompile Include="graphics\CartoonShaderClass.cpp" />
     <ClCompile Include="graphics\ColorShaderClass.cpp" />
     <ClCompile Include="graphics\D3DClass.cpp" />
     <ClCompile Include="graphics\FontClass.cpp" />
-    <ClCompile Include="graphics\FontShader.cpp" />
+    <ClCompile Include="graphics\FontShaderClass.cpp" />
     <ClCompile Include="graphics\GraphicsClass.cpp" />
     <ClCompile Include="graphics\GraphicsComponentClass.cpp" />
     <ClCompile Include="graphics\LightClass.cpp" />
@@ -105,6 +109,7 @@
     <ClCompile Include="system\Main.cpp" />
     <ClCompile Include="system\SystemClass.cpp" />
     <ClCompile Include="system\TimerClass.cpp" />
+    <ClCompile Include="UI\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shader\cartoon.ps" />
@@ -192,7 +197,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(ProjectDir)math;..\..\Engine\Engine\gameplay;..\..\Engine\Engine\graphics;..\..\Engine\Engine\gameobject;..\..\Engine\Engine\system;..\..\Engine\Engine\physics;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)math;..\..\Engine\Engine\3DModel;..\..\Engine\Engine\gameplay;..\..\Engine\Engine\graphics;..\..\Engine\Engine\gameobject;..\..\Engine\Engine\system;..\..\Engine\Engine\physics;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

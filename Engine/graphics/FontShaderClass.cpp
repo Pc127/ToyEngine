@@ -1,4 +1,4 @@
-#include"FontShader.h"
+#include"FontShaderClass.h"
 FontShaderClass::FontShaderClass()
 {
 	mVertexShader = 0;

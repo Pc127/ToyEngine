@@ -108,6 +108,8 @@ void CameraClass::Render()
 	up.y = 0.0f;
 	up.z = 0.0f;
 
+
+
 	// 相机的世界坐标
 	position.x = m_positionX;
 	position.y = m_positionY;
@@ -118,6 +120,8 @@ void CameraClass::Render()
 	lookAt.x = 0.0f;
 	lookAt.y = -1.0f;
 	lookAt.z = 0.0f;
+
+
 
 	// 旋转的设置，以弧度为单位
 	pitch = m_rotationX * 0.0174532925f;
