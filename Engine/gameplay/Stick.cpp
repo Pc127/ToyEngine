@@ -73,10 +73,13 @@ bool Stick::Frame()
 	}
 
 	m_PhysicsComponent->m_position = ballPostion + direction*distance;
-	m_PhysicsComponent->m_rotation = angle;
+	m_PhysicsComponent->m_position.y = 0;
+
+	// 把角度转化为四元素的方向
+	D3DXQuaternionRotationAxis(&m_PhysicsComponent->m_orientation, &D3DXVECTOR3(0, 1, 0), angle);
 
 	if (InputClass::GetSingleton()->IsLeftMouseButtonDown()) {
-		ball->m_PhysicsComponent->m_velocity = direction * -10;
+		ball->m_PhysicsComponent->m_velocity = direction * -15;
 	}
 
 	return true;

@@ -56,7 +56,8 @@ bool GameSceneSystemClass::Frame()
 	auto objs = GameObjectListClass::GetSingleton()->m_GameObjects;
 
 	for (auto obj : objs) {
-		obj->Frame();
+		if(obj->active)
+			obj->Frame();
 	}
 
 	return true;

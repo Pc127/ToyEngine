@@ -29,12 +29,6 @@
     <Filter Include="Resource\shader">
       <UniqueIdentifier>{7998a311-dd0e-4cde-bf86-74b855ca2eaa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\3DModel">
-      <UniqueIdentifier>{f35aabeb-7344-4044-91a4-122c9483aae7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\UI">
-      <UniqueIdentifier>{5002fd8c-7fdb-4372-8ccc-44b6e6b4931a}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="system\SystemClass.h">
@@ -97,9 +91,6 @@
     <ClInclude Include="gameobject\GameSceneClass.h">
       <Filter>Source\gameobject</Filter>
     </ClInclude>
-    <ClInclude Include="gameplay\SceneOne.h">
-      <Filter>Source\gameplay</Filter>
-    </ClInclude>
     <ClInclude Include="physics\MathHeader.h">
       <Filter>Source\physics</Filter>
     </ClInclude>
@@ -136,40 +127,55 @@
     <ClInclude Include="graphics\FontClass.h">
       <Filter>Source\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="gameplay\SceneMenu.h">
-      <Filter>Source\gameplay</Filter>
-    </ClInclude>
     <ClInclude Include="gameobject\CameraClass.h">
       <Filter>Source\gameobject</Filter>
-    </ClInclude>
-    <ClInclude Include="3DModel\Ball.h">
-      <Filter>Source\3DModel</Filter>
-    </ClInclude>
-    <ClInclude Include="3DModel\Desktop.h">
-      <Filter>Source\3DModel</Filter>
-    </ClInclude>
-    <ClInclude Include="3DModel\Edge.h">
-      <Filter>Source\3DModel</Filter>
-    </ClInclude>
-    <ClInclude Include="3DModel\Stick.h">
-      <Filter>Source\3DModel</Filter>
-    </ClInclude>
-    <ClInclude Include="3DModel\Table.h">
-      <Filter>Source\3DModel</Filter>
-    </ClInclude>
-    <ClInclude Include="graphics\bitmapclass.h">
-      <Filter>Source\graphics</Filter>
     </ClInclude>
     <ClInclude Include="graphics\FontShaderClass.h">
       <Filter>Source\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="UI\Title.h">
-      <Filter>Source\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="BitmapMapClass.h">
+    <ClInclude Include="BitmapStruct.h">
       <Filter>Source\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="BitmapStruct.h">
+    <ClInclude Include="gameplay\Stick.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\Subline.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\Table.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\Title.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\Ball.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\Desktop.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\Edge.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\Hole.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\Monitor.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\SceneMenu.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\SceneOne.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\ScenePlay.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\BitmapMapClass.h">
+      <Filter>Source\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\bitmapclass.h">
       <Filter>Source\graphics</Filter>
     </ClInclude>
   </ItemGroup>
@@ -237,9 +243,6 @@
     <ClCompile Include="gameobject\GameSceneClass.cpp">
       <Filter>Source\gameobject</Filter>
     </ClCompile>
-    <ClCompile Include="gameplay\SceneOne.cpp">
-      <Filter>Source\gameplay</Filter>
-    </ClCompile>
     <ClCompile Include="physics\ColliderClass.cpp">
       <Filter>Source\physics</Filter>
     </ClCompile>
@@ -273,37 +276,52 @@
     <ClCompile Include="graphics\FontClass.cpp">
       <Filter>Source\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="gameplay\SceneMenu.cpp">
-      <Filter>Source\gameplay</Filter>
-    </ClCompile>
     <ClCompile Include="gameobject\CameraClass.cpp">
       <Filter>Source\gameobject</Filter>
-    </ClCompile>
-    <ClCompile Include="3DModel\Ball.cpp">
-      <Filter>Source\3DModel</Filter>
-    </ClCompile>
-    <ClCompile Include="3DModel\Desktop.cpp">
-      <Filter>Source\3DModel</Filter>
-    </ClCompile>
-    <ClCompile Include="3DModel\Edge.cpp">
-      <Filter>Source\3DModel</Filter>
-    </ClCompile>
-    <ClCompile Include="3DModel\Stick.cpp">
-      <Filter>Source\3DModel</Filter>
-    </ClCompile>
-    <ClCompile Include="3DModel\Table.cpp">
-      <Filter>Source\3DModel</Filter>
-    </ClCompile>
-    <ClCompile Include="graphics\bitmapclass.cpp">
-      <Filter>Source\graphics</Filter>
     </ClCompile>
     <ClCompile Include="graphics\FontShaderClass.cpp">
       <Filter>Source\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="UI\Title.cpp">
-      <Filter>Source\UI</Filter>
+    <ClCompile Include="gameplay\Stick.cpp">
+      <Filter>Source\gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="BitmapMapClass.cpp">
+    <ClCompile Include="gameplay\Subline.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Table.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Title.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Ball.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Desktop.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Edge.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Hole.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Monitor.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\SceneMenu.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\SceneOne.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\ScenePlay.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\BitmapMapClass.cpp">
+      <Filter>Source\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\bitmapclass.cpp">
       <Filter>Source\graphics</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,7 +1,7 @@
 ﻿#pragma once
-#include"GameObjectClass.h"
-#include"Bitmapclass.h"
-#include"../BitmapStruct.h"
+#include "GameObjectClass.h"
+#include "Bitmapclass.h"
+#include "BitmapStruct.h"
 class Title:public GameObjectClass
 {
 public:

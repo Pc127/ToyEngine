@@ -19,21 +19,26 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="3DModel\Ball.h" />
-    <ClInclude Include="3DModel\Desktop.h" />
-    <ClInclude Include="3DModel\Edge.h" />
-    <ClInclude Include="3DModel\Stick.h" />
-    <ClInclude Include="3DModel\Table.h" />
-    <ClInclude Include="BitmapMapClass.h" />
     <ClInclude Include="BitmapStruct.h" />
     <ClInclude Include="gameobject\CameraClass.h" />
     <ClInclude Include="gameobject\GameObjectClass.h" />
     <ClInclude Include="gameobject\GameObjectListClass.h" />
     <ClInclude Include="gameobject\GameSceneClass.h" />
     <ClInclude Include="gameobject\GameSceneSystemClass.h" />
+    <ClInclude Include="gameplay\Ball.h" />
+    <ClInclude Include="gameplay\Desktop.h" />
+    <ClInclude Include="gameplay\Edge.h" />
+    <ClInclude Include="gameplay\Hole.h" />
+    <ClInclude Include="gameplay\Monitor.h" />
     <ClInclude Include="gameplay\SceneMenu.h" />
     <ClInclude Include="gameplay\SceneOne.h" />
+    <ClInclude Include="gameplay\ScenePlay.h" />
+    <ClInclude Include="gameplay\Stick.h" />
+    <ClInclude Include="gameplay\Subline.h" />
+    <ClInclude Include="gameplay\Table.h" />
+    <ClInclude Include="gameplay\Title.h" />
     <ClInclude Include="graphics\bitmapclass.h" />
+    <ClInclude Include="graphics\BitmapMapClass.h" />
     <ClInclude Include="graphics\CartoonShaderClass.h" />
     <ClInclude Include="graphics\ColorShaderClass.h" />
     <ClInclude Include="graphics\D3DClass.h" />
@@ -63,23 +68,27 @@
     <ClInclude Include="system\InputClass.h" />
     <ClInclude Include="system\SystemClass.h" />
     <ClInclude Include="system\TimerClass.h" />
-    <ClInclude Include="UI\Title.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="3DModel\Ball.cpp" />
-    <ClCompile Include="3DModel\Desktop.cpp" />
-    <ClCompile Include="3DModel\Edge.cpp" />
-    <ClCompile Include="3DModel\Stick.cpp" />
-    <ClCompile Include="3DModel\Table.cpp" />
-    <ClCompile Include="BitmapMapClass.cpp" />
     <ClCompile Include="gameobject\CameraClass.cpp" />
     <ClCompile Include="gameobject\GameObjectClass.cpp" />
     <ClCompile Include="gameobject\GameObjectListClass.cpp" />
     <ClCompile Include="gameobject\GameSceneClass.cpp" />
     <ClCompile Include="gameobject\GameSceneSystemClass.cpp" />
+    <ClCompile Include="gameplay\Ball.cpp" />
+    <ClCompile Include="gameplay\Desktop.cpp" />
+    <ClCompile Include="gameplay\Edge.cpp" />
+    <ClCompile Include="gameplay\Hole.cpp" />
+    <ClCompile Include="gameplay\Monitor.cpp" />
     <ClCompile Include="gameplay\SceneMenu.cpp" />
     <ClCompile Include="gameplay\SceneOne.cpp" />
+    <ClCompile Include="gameplay\ScenePlay.cpp" />
+    <ClCompile Include="gameplay\Stick.cpp" />
+    <ClCompile Include="gameplay\Subline.cpp" />
+    <ClCompile Include="gameplay\Table.cpp" />
+    <ClCompile Include="gameplay\Title.cpp" />
     <ClCompile Include="graphics\bitmapclass.cpp" />
+    <ClCompile Include="graphics\BitmapMapClass.cpp" />
     <ClCompile Include="graphics\CartoonShaderClass.cpp" />
     <ClCompile Include="graphics\ColorShaderClass.cpp" />
     <ClCompile Include="graphics\D3DClass.cpp" />
@@ -109,7 +118,6 @@
     <ClCompile Include="system\Main.cpp" />
     <ClCompile Include="system\SystemClass.cpp" />
     <ClCompile Include="system\TimerClass.cpp" />
-    <ClCompile Include="UI\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shader\cartoon.ps" />

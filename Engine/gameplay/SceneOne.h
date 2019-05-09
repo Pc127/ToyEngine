@@ -7,7 +7,10 @@
 #include "ForceRegistryClass.h"
 #include "Edge.h"
 #include "Stick.h"
-#include"../UI/Title.h"
+#include "Monitor.h"
+#include "Hole.h"
+#include "Subline.h"
+
 class SceneOne:public GameSceneClass
 {
 public:

@@ -99,11 +99,11 @@ bool SceneOne::Initialize()
 
 	// 桌子
 	m_SceneObject.push_back(new Table);
-	m_SceneObject[1]->Initialize();
+	m_SceneObject[16]->Initialize();
 
 	// 桌面
 	m_SceneObject.push_back(new Desktop);
-	m_SceneObject[2]->Initialize();
+	m_SceneObject[17]->Initialize();
 
 	// 碰撞边框
 	// 左手侧
@@ -133,9 +133,46 @@ bool SceneOne::Initialize()
 	// 台球杆
 	m_SceneObject.push_back(new Stick(m_SceneObject[15]));
 	m_SceneObject[24]->Initialize();
-	
-	m_SceneObject.push_back(new Title(L"../Engine/data/Title.dds"));
+
+	// 辅助线
+	m_SceneObject.push_back(new Subline(m_SceneObject[15]));
 	m_SceneObject[25]->Initialize();
+
+
+	// 球洞中上
+	m_SceneObject.push_back(new Hole);
+	m_SceneObject[26]->Initialize();
+	m_SceneObject[26]->m_PhysicsComponent->m_position = D3DXVECTOR3(30,0,0);
+
+	// 球洞左上
+	m_SceneObject.push_back(new Hole);
+	m_SceneObject[27]->Initialize();
+	m_SceneObject[27]->m_PhysicsComponent->m_position = D3DXVECTOR3(29, 0, 54);
+
+	// 球洞右上
+	m_SceneObject.push_back(new Hole);
+	m_SceneObject[28]->Initialize();
+	m_SceneObject[28]->m_PhysicsComponent->m_position = D3DXVECTOR3(29, 0, -54);
+
+	// 球洞左下
+	m_SceneObject.push_back(new Hole);
+	m_SceneObject[29]->Initialize();
+	m_SceneObject[29]->m_PhysicsComponent->m_position = D3DXVECTOR3(-29, 0, 54);
+
+	// 球洞右下
+	m_SceneObject.push_back(new Hole);
+	m_SceneObject[30]->Initialize();
+	m_SceneObject[30]->m_PhysicsComponent->m_position = D3DXVECTOR3(-29, 0, -54);
+
+	// 球洞中下
+	m_SceneObject.push_back(new Hole);
+	m_SceneObject[31]->Initialize();
+	m_SceneObject[31]->m_PhysicsComponent->m_position = D3DXVECTOR3(-30, 0, 0);
+
+	// 台球杆的监视器
+	m_SceneObject.push_back(new Monitor(m_SceneObject[24], m_SceneObject[25]));
+	m_SceneObject[32]->Initialize();
+
 	return true;
 }
 

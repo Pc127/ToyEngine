@@ -4,6 +4,7 @@
 #include "ForceRegistryClass.h"
 #include "CameraClass.h"
 #include "InputClass.h"
+
 #include <ctgmath>
 
 class Stick:public GameObjectClass

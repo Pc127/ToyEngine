@@ -2,11 +2,12 @@
 #include <d3d11.h>
 #include <D3DX10math.h>
 #include "TextureClass.h"
-#include "Bitmapclass.h"
+#include "bitmapclass.h"
+#include "BitmapStruct.h"
 #include <fstream>
 #include <map>
 #include <algorithm>
-#include"BitmapStruct.h"
+
 using namespace std;
 
 class BitmapMapClass

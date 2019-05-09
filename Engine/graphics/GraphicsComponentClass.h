@@ -8,8 +8,8 @@
 #include "ModelMapClass.h"
 #include "TextureMapClass.h"
 #include"bitmapclass.h"
-#include"../BitmapMapClass.h"
-#include"../BitmapStruct.h"
+#include"BitmapMapClass.h"
+#include"BitmapStruct.h"
 class GraphicsComponentClass
 {
 public:

@@ -35,13 +35,20 @@ bool PhysicsClass::Frame(float deltatime)
 			// 滤去在该游戏物体之前的物体
 			// 避免一次碰撞检测进行两次
 			for (auto it2 = it; it2 != gameobjs.end();++it2) {
-				CollisionDetectorClass::CollisionInfo info;
-				PhysicsComponentClass* pc2 = (*it2)->m_PhysicsComponent;
-				info = CollisionDetectorClass::GetSingleton()->Detect(pc, pc2, deltatime);
-				if (info.hasCollide) {
-					// 发生碰撞时的处理
-					UpdateVelocity(pc, pc2, info);
-				}
+				if ((*it2)->active && (*it2)->m_PhysicsComponent) {
+					CollisionDetectorClass::CollisionInfo info;
+					PhysicsComponentClass* pc2 = (*it2)->m_PhysicsComponent;
+					info = CollisionDetectorClass::GetSingleton()->Detect(pc, pc2, deltatime);
+					if (info.hasCollide) {
+						// 质量大于0的时候 双方进行速度处理
+						// 发生碰撞时的处理
+						if(pc->mass>0&&pc2->mass>0)
+							UpdateVelocity(pc, pc2, info);
+						// 调用双方的碰撞处理函数
+						(*it)->OnCollision(*(it2));
+						(*it2)->OnCollision(*(it));
+					}	
+				}		
 			}
 		}
 	}
@@ -49,14 +56,22 @@ bool PhysicsClass::Frame(float deltatime)
 	// 处理受力 与 速度更新
 	m_force->Frame(deltatime);
 
-	// 用来更新位置
+	// 用来更新位置 与 方向
 	for (GameObjectClass* gameobject : GameObjectListClass::GetSingleton()->m_GameObjects) {
 		if (gameobject->active && gameobject->m_PhysicsComponent) {
 
 			PhysicsComponentClass* pc = gameobject->m_PhysicsComponent;
-
 			pc->m_position += deltatime*pc->m_velocity;
 
+			// rotation是0的话 进行单位化
+			if (D3DXQuaternionLength(&pc->m_rotation) == 0) {
+				D3DXQuaternionIdentity(&pc->m_rotation);
+			}
+
+			// 通过旋转速度 更新方向
+			pc->m_orientation *= deltatime*pc->m_rotation;
+			// 单位化
+			D3DXQuaternionNormalize(&pc->m_orientation, &pc->m_orientation);
 		}
 	}
 

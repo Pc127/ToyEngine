@@ -150,8 +150,8 @@ bool GraphicsClass::Render()
 	// m_physics->Frame();
 
 	// 模型准备数据
- 	for (GameObjectClass* gameobject : GameObjectListClass::GetSingleton()->m_GameObjects) {
-		if (gameobject->active && gameobject->m_GraphicsComponent&&gameobject->type==1) {
+	for (GameObjectClass* gameobject : GameObjectListClass::GetSingleton()->m_GameObjects) {
+		if (gameobject->active && gameobject->m_GraphicsComponent) {
 
 			GraphicsComponentClass* gc = gameobject->m_GraphicsComponent;
 
@@ -179,14 +179,16 @@ bool GraphicsClass::Render()
 				return false;
 			}
 		}
-		if(gameobject->active && gameobject->m_GraphicsComponent&&gameobject->type == 0)
+	}
+
+	/*	if(gameobject->active && gameobject->m_GraphicsComponent&&gameobject->type == 0)
 		{
 			m_D3D->GetOrthoMatrix(orthoMatrix);
 
 
 			GraphicsComponentClass* gc = gameobject->m_GraphicsComponent;
 
-			// 获取世界矩阵
+			 获取世界矩阵
 			if (gameobject->m_PhysicsComponent) {
 				gameobject->m_PhysicsComponent->GetWorldMatrix(worldMatrix);
 			}
@@ -205,8 +207,7 @@ bool GraphicsClass::Render()
 				return false;
 			}
 			m_D3D->TurnZBufferOn();
-		}
-	}
+		}*/
 
 	m_D3D->EndScene();
 
