@@ -1,9 +1,10 @@
 ﻿#include "Monitor.h"
 
 
-Monitor::Monitor(GameObjectClass *st)
+Monitor::Monitor(GameObjectClass *st, GameObjectClass *sl)
 {
 	stick = st;
+	subline = sl;
 }
 
 Monitor::~Monitor()
@@ -33,7 +34,8 @@ bool Monitor::Frame()
 		if (gameobject->active&&gameobject->m_PhysicsComponent) {
 			if (D3DXVec3Length(&gameobject->m_PhysicsComponent->m_velocity)) {
 				state = false;
-				// stick->active = false;
+				stick->active = false;
+				subline->active = false;
 				return true;
 			}
 		}
@@ -41,5 +43,6 @@ bool Monitor::Frame()
 
 	state = true;
 	stick->active = true;
+	subline->active = true;
 	return true;
 }

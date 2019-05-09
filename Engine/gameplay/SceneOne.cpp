@@ -133,14 +133,15 @@ bool SceneOne::Initialize()
 	m_SceneObject.push_back(new Stick(m_SceneObject[15]));
 	m_SceneObject[24]->Initialize();
 
-	// 台球杆的监视器
-	m_SceneObject.push_back(new Monitor(m_SceneObject[24]));
+	// 辅助线
+	m_SceneObject.push_back(new Subline(m_SceneObject[15]));
 	m_SceneObject[25]->Initialize();
+
 
 	// 球洞中上
 	m_SceneObject.push_back(new Hole);
 	m_SceneObject[26]->Initialize();
-	m_SceneObject[26]->m_PhysicsComponent->m_position = D3DXVECTOR3(29,0,0);
+	m_SceneObject[26]->m_PhysicsComponent->m_position = D3DXVECTOR3(30,0,0);
 
 	// 球洞左上
 	m_SceneObject.push_back(new Hole);
@@ -165,7 +166,11 @@ bool SceneOne::Initialize()
 	// 球洞中下
 	m_SceneObject.push_back(new Hole);
 	m_SceneObject[31]->Initialize();
-	m_SceneObject[31]->m_PhysicsComponent->m_position = D3DXVECTOR3(-29, 0, 0);
+	m_SceneObject[31]->m_PhysicsComponent->m_position = D3DXVECTOR3(-30, 0, 0);
+
+	// 台球杆的监视器
+	m_SceneObject.push_back(new Monitor(m_SceneObject[24], m_SceneObject[25]));
+	m_SceneObject[32]->Initialize();
 
 	return true;
 }

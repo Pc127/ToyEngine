@@ -1,16 +1,16 @@
-﻿#include "Stick.h"
+﻿#include "Subline.h"
 
-Stick::Stick(GameObjectClass *ball)
+Subline::Subline(GameObjectClass *ball)
 {
 	this->ball = ball;
 }
 
-Stick::~Stick()
+Subline::~Subline()
 {
 }
 
 
-bool Stick::Initialize()
+bool Subline::Initialize()
 {
 	// 注册
 	Register();
@@ -19,7 +19,7 @@ bool Stick::Initialize()
 
 	m_GraphicsComponent = new GraphicsComponentClass;
 
-	m_GraphicsComponent->Initialize("../Engine/data/Stick.txt", L"../Engine/data/Stick.dds");
+	m_GraphicsComponent->Initialize("../Engine/data/Subline.txt", L"../Engine/data/Subline.dds");
 
 	this->active = true;
 
@@ -31,11 +31,10 @@ bool Stick::Initialize()
 	return true;
 }
 
-bool Stick::Frame()
+bool Subline::Frame()
 {
 	// 于球杆的距离
 	float distance = 1;
-
 
 	int mouseX, mouseY;
 	InputClass::GetSingleton()->GetMouseLocation(mouseX, mouseY);
@@ -55,8 +54,8 @@ bool Stick::Frame()
 	D3DXVECTOR3 ballPostion = ball->m_PhysicsComponent->m_position;
 
 	// 计算方向
-	// 射点到白球
-	D3DXVECTOR3 direction = rayPostion - ballPostion;
+	// 白球到射点
+	D3DXVECTOR3 direction = ballPostion - rayPostion ;
 	// 修正误差
 	direction.y = 0;
 	D3DXVec3Normalize(&direction, &direction);
@@ -77,10 +76,6 @@ bool Stick::Frame()
 
 	// 把角度转化为四元素的方向
 	D3DXQuaternionRotationAxis(&m_PhysicsComponent->m_orientation, &D3DXVECTOR3(0, 1, 0), angle);
-
-	if (InputClass::GetSingleton()->IsLeftMouseButtonDown()) {
-		ball->m_PhysicsComponent->m_velocity = direction * -15;
-	}
 
 	return true;
 }

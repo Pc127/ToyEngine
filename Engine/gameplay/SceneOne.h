@@ -9,6 +9,7 @@
 #include "Stick.h"
 #include "Monitor.h"
 #include "Hole.h"
+#include "Subline.h"
 
 class SceneOne:public GameSceneClass
 {

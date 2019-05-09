@@ -33,6 +33,7 @@
     <ClInclude Include="gameplay\SceneMenu.h" />
     <ClInclude Include="gameplay\SceneOne.h" />
     <ClInclude Include="gameplay\Stick.h" />
+    <ClInclude Include="gameplay\Subline.h" />
     <ClInclude Include="gameplay\Table.h" />
     <ClInclude Include="graphics\CartoonShaderClass.h" />
     <ClInclude Include="graphics\ColorShaderClass.h" />
@@ -79,6 +80,7 @@
     <ClCompile Include="gameplay\SceneMenu.cpp" />
     <ClCompile Include="gameplay\SceneOne.cpp" />
     <ClCompile Include="gameplay\Stick.cpp" />
+    <ClCompile Include="gameplay\Subline.cpp" />
     <ClCompile Include="gameplay\Table.cpp" />
     <ClCompile Include="graphics\CartoonShaderClass.cpp" />
     <ClCompile Include="graphics\ColorShaderClass.cpp" />

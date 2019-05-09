@@ -43,6 +43,6 @@ void Hole::OnCollision(GameObjectClass *obj)
 
 	if (ball) {
 		ball->m_PhysicsComponent->m_velocity = D3DXVECTOR3(0, -20, 0);
-		// ball->active = false;
+		ball->active = false;
 	}
 }

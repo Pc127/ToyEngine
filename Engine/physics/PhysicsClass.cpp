@@ -63,9 +63,6 @@ bool PhysicsClass::Frame(float deltatime)
 			PhysicsComponentClass* pc = gameobject->m_PhysicsComponent;
 			pc->m_position += deltatime*pc->m_velocity;
 
-			D3DXQUATERNION inverse;
-			D3DXQuaternionInverse(&inverse, &pc->m_orientation);
-
 			// rotation是0的话 进行单位化
 			if (D3DXQuaternionLength(&pc->m_rotation) == 0) {
 				D3DXQuaternionIdentity(&pc->m_rotation);
