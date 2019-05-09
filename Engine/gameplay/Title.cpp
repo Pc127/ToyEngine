@@ -1,4 +1,4 @@
-﻿#include"Title.h"
+﻿#include "Title.h"
 
 Title::Title(WCHAR* texture)
 {
