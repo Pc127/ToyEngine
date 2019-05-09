@@ -108,8 +108,6 @@ void CameraClass::Render()
 	up.y = 0.0f;
 	up.z = 0.0f;
 
-
-
 	// 相机的世界坐标
 	position.x = m_positionX;
 	position.y = m_positionY;
@@ -120,7 +118,6 @@ void CameraClass::Render()
 	lookAt.x = 0.0f;
 	lookAt.y = -1.0f;
 	lookAt.z = 0.0f;
-
 
 
 	// 旋转的设置，以弧度为单位
@@ -141,6 +138,13 @@ void CameraClass::Render()
 	// 创建视图矩阵
 	// 摄像机位置+观察方向+世界空间的上向量
 	D3DXMatrixLookAtLH(&m_viewMatrix, &position, &lookAt, &up);
+
+	// 创建ui 视图矩阵
+	position = D3DXVECTOR3(0.0f, 0.0f, -10.0f);
+	lookAt = D3DXVECTOR3(0.0f, 0.0f, 1.0f);
+	lookAt = position + lookAt;
+	up = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
+	D3DXMatrixLookAtLH(&m_uiViewMatrix, &position, &lookAt, &up);
 
 	return;
 }
@@ -173,4 +177,15 @@ void CameraClass::SetOrthoMatrix(D3DXMATRIX &orthoMatrix)
 {
 	m_orthoMatrix = orthoMatrix;
 	return;
+}
+
+void CameraClass::GetUiViewMatrix(D3DXMATRIX &uiViewMatrix)
+{
+	uiViewMatrix = m_uiViewMatrix;
+	return;
+}
+
+void CameraClass::SetUiViewMatrix(D3DXMATRIX &uiViewMatrix)
+{
+	m_uiViewMatrix = uiViewMatrix;
 }

@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include "GameObjectClass.h"
-#include "Bitmapclass.h"
-#include "BitmapStruct.h"
+
 class Title:public GameObjectClass
 {
 public:
@@ -12,6 +11,5 @@ public:
 	//继承了父类的shutdown 所以不用考虑组件的析构
 private:
 	WCHAR* m_Texture;
-	bitmapStruct* m_Bitmapname;
 };
 

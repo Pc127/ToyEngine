@@ -48,3 +48,20 @@ bool ModelMapClass::SetModel(char* modelfilename)
 
 	return true;
 }
+
+bool ModelMapClass::SetUiModel(char *modelindex, int bitmapWidth, int bitmapHeight)
+{
+	m_modelMap[modelindex] = new ModelClass;
+
+	int screenWidth, screenHeight;
+	screenWidth = InputClass::GetSingleton()->m_screenWidth;
+	screenHeight = InputClass::GetSingleton()->m_screenHeight;
+
+	bool result;
+	result = m_modelMap[modelindex]->InitializeUi(m_device, screenWidth, screenHeight, bitmapWidth, bitmapHeight);
+	if (!result) {
+		return false;
+	}
+
+	return true;
+}

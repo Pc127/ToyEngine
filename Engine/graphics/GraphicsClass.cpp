@@ -85,9 +85,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	// 纹理与模型的单例模块 
 	ModelMapClass::GetSingleton()->Initialize(m_D3D->GetDevice());
 	TextureMapClass::GetSingleton()->Initialize(m_D3D->GetDevice());
-	BitmapMapClass::GetSingleton()->Initialize(m_D3D->GetDevice());
 	
-
 	return true;
 }
 
@@ -160,54 +158,49 @@ bool GraphicsClass::Render()
 				gameobject->m_PhysicsComponent->GetWorldMatrix(worldMatrix);
 			}
 
+			// 模型配置到渲染流水线
 			gc->m_Model->Render(m_D3D->GetDeviceContext());
 
-			// 渲染背面
-			m_D3D->RenderBack();
-			result = m_CartoonShader->Render(m_D3D->GetDeviceContext(), gc->m_Model->GetIndexCount(),
-				worldMatrix, viewMatrix, projectionMatrix);
-			if (!result) {
-				return false;
+			if (gc->isUi == false) {
+				// 渲染3d物体
+				// 渲染背面
+				m_D3D->RenderBack();
+				result = m_CartoonShader->Render(m_D3D->GetDeviceContext(), gc->m_Model->GetIndexCount(),
+					worldMatrix, viewMatrix, projectionMatrix);
+				if (!result) {
+					return false;
+				}
+
+				// 渲染正面
+				m_D3D->RenderFront();
+				result = m_LightShader->Render(m_D3D->GetDeviceContext(), gc->m_Model->GetIndexCount(),
+					worldMatrix, viewMatrix, projectionMatrix, gc->m_Texture, m_Light->GetDirection(), m_Light->GetAmbientColor(), m_Light->GetDiffuseColor(),
+					m_Camera->GetPosition(), m_Light->GetSpecularColor(), m_Light->GetSpecularPower());
+				if (!result) {
+					return false;
+				}
 			}
+			else {
+				// 渲染ui
+				m_D3D->TurnZBufferOff();
 
-			// 渲染正面
-			m_D3D->RenderFront();
-			result = m_LightShader->Render(m_D3D->GetDeviceContext(), gc->m_Model->GetIndexCount(),
-				worldMatrix, viewMatrix, projectionMatrix, gc->m_Texture, m_Light->GetDirection(), m_Light->GetAmbientColor(), m_Light->GetDiffuseColor(),
-				m_Camera->GetPosition(), m_Light->GetSpecularColor(), m_Light->GetSpecularPower());
-			if (!result) {
-				return false;
-			}
-		}
-	}
+				// 从相机设置视图矩阵
+				m_Camera->GetUiViewMatrix(viewMatrix);
+				// 从相机设置投影矩阵
+				m_Camera->GetOrthoMatrix(projectionMatrix);
 
-	/*	if(gameobject->active && gameobject->m_GraphicsComponent&&gameobject->type == 0)
-		{
-			m_D3D->GetOrthoMatrix(orthoMatrix);
-
-
-			GraphicsComponentClass* gc = gameobject->m_GraphicsComponent;
-
-			 获取世界矩阵
-			if (gameobject->m_PhysicsComponent) {
-				gameobject->m_PhysicsComponent->GetWorldMatrix(worldMatrix);
-			}
-
-			m_D3D->TurnZBufferOff();
-			result=gc->m_Bitmap->Render(m_D3D->GetDeviceContext(), 200, 200);
-			if (!result)
-			{
-				return false;
+				result = m_TextureShader->Render(m_D3D->GetDeviceContext(), gc->m_Model->GetIndexCount(), worldMatrix, viewMatrix, projectionMatrix, gc->m_Texture);
+				/*result = m_CartoonShader->Render(m_D3D->GetDeviceContext(), gc->m_Model->GetIndexCount(),
+					worldMatrix, viewMatrix, projectionMatrix);*/
+				if (!result)
+				{
+					return false;
+				}
+				m_D3D->TurnZBufferOn();
 			}
 			
-
-			result = m_TextureShader->Render(m_D3D->GetDeviceContext(), gc->m_Bitmap->GetIndexCount(), worldMatrix, viewMatrix, orthoMatrix, gc->m_Bitmap->GetTexture());
-			if (!result)
-			{
-				return false;
-			}
-			m_D3D->TurnZBufferOn();
-		}*/
+		}
+	}
 
 	m_D3D->EndScene();
 

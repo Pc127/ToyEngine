@@ -173,6 +173,10 @@ bool SceneOne::Initialize()
 	m_SceneObject.push_back(new Monitor(m_SceneObject[24], m_SceneObject[25]));
 	m_SceneObject[32]->Initialize();
 
+	// 标题ui
+	m_SceneObject.push_back(new Title(L"../Engine/data/GamePanel.dds"));
+	m_SceneObject[33]->Initialize();
+
 	return true;
 }
 

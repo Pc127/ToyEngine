@@ -133,9 +133,6 @@
     <ClInclude Include="graphics\FontShaderClass.h">
       <Filter>Source\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="BitmapStruct.h">
-      <Filter>Source\graphics</Filter>
-    </ClInclude>
     <ClInclude Include="gameplay\Stick.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
@@ -171,12 +168,6 @@
     </ClInclude>
     <ClInclude Include="gameplay\ScenePlay.h">
       <Filter>Source\gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="graphics\BitmapMapClass.h">
-      <Filter>Source\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="graphics\bitmapclass.h">
-      <Filter>Source\graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -317,12 +308,6 @@
     </ClCompile>
     <ClCompile Include="gameplay\ScenePlay.cpp">
       <Filter>Source\gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="graphics\BitmapMapClass.cpp">
-      <Filter>Source\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="graphics\bitmapclass.cpp">
-      <Filter>Source\graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

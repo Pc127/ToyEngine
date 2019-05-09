@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BitmapStruct.h" />
     <ClInclude Include="gameobject\CameraClass.h" />
     <ClInclude Include="gameobject\GameObjectClass.h" />
     <ClInclude Include="gameobject\GameObjectListClass.h" />
@@ -37,8 +36,6 @@
     <ClInclude Include="gameplay\Subline.h" />
     <ClInclude Include="gameplay\Table.h" />
     <ClInclude Include="gameplay\Title.h" />
-    <ClInclude Include="graphics\bitmapclass.h" />
-    <ClInclude Include="graphics\BitmapMapClass.h" />
     <ClInclude Include="graphics\CartoonShaderClass.h" />
     <ClInclude Include="graphics\ColorShaderClass.h" />
     <ClInclude Include="graphics\D3DClass.h" />
@@ -87,8 +84,6 @@
     <ClCompile Include="gameplay\Subline.cpp" />
     <ClCompile Include="gameplay\Table.cpp" />
     <ClCompile Include="gameplay\Title.cpp" />
-    <ClCompile Include="graphics\bitmapclass.cpp" />
-    <ClCompile Include="graphics\BitmapMapClass.cpp" />
     <ClCompile Include="graphics\CartoonShaderClass.cpp" />
     <ClCompile Include="graphics\ColorShaderClass.cpp" />
     <ClCompile Include="graphics\D3DClass.cpp" />

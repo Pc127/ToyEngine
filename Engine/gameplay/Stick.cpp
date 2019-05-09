@@ -16,7 +16,7 @@ bool Stick::Initialize()
 	Register();
 
 	bool result;
-	this->type = 1;
+
 	m_GraphicsComponent = new GraphicsComponentClass;
 
 	m_GraphicsComponent->Initialize("../Engine/data/Stick.txt", L"../Engine/data/Stick.dds");

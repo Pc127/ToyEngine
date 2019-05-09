@@ -3,10 +3,12 @@
 #include <D3DX10math.h>
 #include "TextureClass.h"
 #include "ModelClass.h"
+#include "InputClass.h"
 #include <fstream>
 #include <map>
 #include <algorithm>
 using namespace std;
+
 
 class ModelMapClass
 {
@@ -21,7 +23,7 @@ public:
 
 	bool SetModel(char*);
 	
-
+	bool SetUiModel(char*, int, int);
 private:
 	ModelMapClass();
 	ModelMapClass(const ModelMapClass&) = delete;

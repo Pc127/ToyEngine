@@ -20,15 +20,12 @@ bool Title::Initialize()
 	// 注册
 	Register();
 
-	this->type = 0;
-	m_Bitmapname = new bitmapStruct;
-	m_GraphicsComponent = new GraphicsComponentClass;
-	this->m_Bitmapname->ScreenWidth = 800;
-	this->m_Bitmapname->ScreenHeight = 600;
-	this->m_Bitmapname->bitmapHeight = 100;
-	this->m_Bitmapname->bitmapWidth = 100;
+	// 需要先创建模型数据
+	ModelMapClass::GetSingleton()->SetUiModel("title", 1000, 200);
 	
-	m_GraphicsComponent->Initialize(m_Bitmapname, m_Texture);
+	m_GraphicsComponent = new GraphicsComponentClass;
+	m_GraphicsComponent->Initialize("title", m_Texture);
+	m_GraphicsComponent->isUi = true;
 
 	this->active = true;
 
@@ -36,6 +33,7 @@ bool Title::Initialize()
 	m_PhysicsComponent = new PhysicsComponentClass;
 	// 速度静止
 	m_PhysicsComponent->Initialize();
+	m_PhysicsComponent->m_position = D3DXVECTOR3(350,0,0);
 
 	return true;
 }
