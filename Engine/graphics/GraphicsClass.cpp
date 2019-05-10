@@ -75,7 +75,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 		return false;
 	}
 
-	// Initialize the texture shader object.
+	// 纹理着色器
 	result = m_TextureShader->Initialize(m_D3D->GetDevice(), hwnd);
 	if (!result)
 	{
@@ -183,6 +183,7 @@ bool GraphicsClass::Render()
 			else {
 				// 渲染ui
 				m_D3D->TurnZBufferOff();
+				m_D3D->TurnOnAlphaBlending();
 
 				// 从相机设置视图矩阵
 				m_Camera->GetUiViewMatrix(viewMatrix);
@@ -190,13 +191,12 @@ bool GraphicsClass::Render()
 				m_Camera->GetOrthoMatrix(projectionMatrix);
 
 				result = m_TextureShader->Render(m_D3D->GetDeviceContext(), gc->m_Model->GetIndexCount(), worldMatrix, viewMatrix, projectionMatrix, gc->m_Texture);
-				/*result = m_CartoonShader->Render(m_D3D->GetDeviceContext(), gc->m_Model->GetIndexCount(),
-					worldMatrix, viewMatrix, projectionMatrix);*/
 				if (!result)
 				{
 					return false;
 				}
 				m_D3D->TurnZBufferOn();
+				m_D3D->TurnOffAlphaBlending();
 			}
 			
 		}

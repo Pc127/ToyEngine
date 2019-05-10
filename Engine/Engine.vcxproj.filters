@@ -142,9 +142,6 @@
     <ClInclude Include="gameplay\Table.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="gameplay\Title.h">
-      <Filter>Source\gameplay</Filter>
-    </ClInclude>
     <ClInclude Include="gameplay\Ball.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
@@ -167,6 +164,15 @@
       <Filter>Source\gameplay</Filter>
     </ClInclude>
     <ClInclude Include="gameplay\ScenePlay.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\Ui.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\BallDetector.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\Rule.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
   </ItemGroup>
@@ -282,9 +288,6 @@
     <ClCompile Include="gameplay\Table.cpp">
       <Filter>Source\gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="gameplay\Title.cpp">
-      <Filter>Source\gameplay</Filter>
-    </ClCompile>
     <ClCompile Include="gameplay\Ball.cpp">
       <Filter>Source\gameplay</Filter>
     </ClCompile>
@@ -307,6 +310,15 @@
       <Filter>Source\gameplay</Filter>
     </ClCompile>
     <ClCompile Include="gameplay\ScenePlay.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Ui.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\BallDetector.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Rule.cpp">
       <Filter>Source\gameplay</Filter>
     </ClCompile>
   </ItemGroup>
