@@ -166,9 +166,6 @@
     <ClInclude Include="gameplay\SceneOne.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="gameplay\ScenePlay.h">
-      <Filter>Source\gameplay</Filter>
-    </ClInclude>
     <ClInclude Include="gameplay\Ui.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
@@ -313,9 +310,6 @@
       <Filter>Source\gameplay</Filter>
     </ClCompile>
     <ClCompile Include="gameplay\SceneOne.cpp">
-      <Filter>Source\gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="gameplay\ScenePlay.cpp">
       <Filter>Source\gameplay</Filter>
     </ClCompile>
     <ClCompile Include="gameplay\Ui.cpp">

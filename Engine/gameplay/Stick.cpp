@@ -34,7 +34,7 @@ bool Stick::Initialize()
 bool Stick::Frame()
 {
 	// 于球杆的距离
-	float distance = 1;
+	static float distance = 1;
 
 
 	int mouseX, mouseY;
@@ -81,14 +81,19 @@ bool Stick::Frame()
 	static int count = 0;
 
 	if (InputClass::GetSingleton()->IsLeftMouseButtonDown()) {
-		++count;
+		if(count<400)
+			++count;
+		distance = count/30 + 1;
 	}
 	else {
-		float force = count*0.1;
-		if (force > 40)
-			force = 40;
-		ball->m_PhysicsComponent->m_velocity = direction * -force;
-		count = 0;
+		distance = 1;
+		if (count > 0) {
+			float force = count*0.1;
+			if (force > 40)
+				force = 40;
+			ball->m_PhysicsComponent->m_velocity = direction * -force;
+			count = 0;
+		}
 	}
 
 	return true;

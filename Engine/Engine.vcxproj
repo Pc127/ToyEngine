@@ -34,7 +34,6 @@
     <ClInclude Include="gameplay\Rule.h" />
     <ClInclude Include="gameplay\SceneMenu.h" />
     <ClInclude Include="gameplay\SceneOne.h" />
-    <ClInclude Include="gameplay\ScenePlay.h" />
     <ClInclude Include="gameplay\Stick.h" />
     <ClInclude Include="gameplay\Subline.h" />
     <ClInclude Include="gameplay\Table.h" />
@@ -85,7 +84,6 @@
     <ClCompile Include="gameplay\Rule.cpp" />
     <ClCompile Include="gameplay\SceneMenu.cpp" />
     <ClCompile Include="gameplay\SceneOne.cpp" />
-    <ClCompile Include="gameplay\ScenePlay.cpp" />
     <ClCompile Include="gameplay\Stick.cpp" />
     <ClCompile Include="gameplay\Subline.cpp" />
     <ClCompile Include="gameplay\Table.cpp" />

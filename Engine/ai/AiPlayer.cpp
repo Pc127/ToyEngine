@@ -1,19 +1,19 @@
-﻿#include "Table.h"
+﻿#include "AiPlayer.h"
 
 
 
-Table::Table()
+AiPlayer::AiPlayer()
 {
 	Initialize();
 }
 
 
-Table::~Table()
+AiPlayer::~AiPlayer()
 {
 }
 
 
-bool Table::Initialize()
+bool AiPlayer::Initialize()
 {
 	// 注册
 	Register();
@@ -33,7 +33,7 @@ bool Table::Initialize()
 	return true;
 }
 
-bool Table::Frame()
+bool AiPlayer::Frame()
 {
 	return false;
 }

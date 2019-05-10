@@ -177,7 +177,7 @@ void Rule::Winner()
 	else {
 		win->active = true;
 		// 下移 50 放置标志
-		win->m_PhysicsComponent->m_position = player1->m_PhysicsComponent->m_position - D3DXVECTOR3(0, -50, 0);
+		win->m_PhysicsComponent->m_position = player2->m_PhysicsComponent->m_position - D3DXVECTOR3(0, -50, 0);
 	}
 
 	// 结束游戏
