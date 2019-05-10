@@ -133,9 +133,6 @@
     <ClInclude Include="graphics\FontShaderClass.h">
       <Filter>Source\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="BitmapStruct.h">
-      <Filter>Source\graphics</Filter>
-    </ClInclude>
     <ClInclude Include="gameplay\Stick.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
@@ -143,9 +140,6 @@
       <Filter>Source\gameplay</Filter>
     </ClInclude>
     <ClInclude Include="gameplay\Table.h">
-      <Filter>Source\gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="gameplay\Title.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
     <ClInclude Include="gameplay\Ball.h">
@@ -172,11 +166,14 @@
     <ClInclude Include="gameplay\ScenePlay.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="graphics\BitmapMapClass.h">
-      <Filter>Source\graphics</Filter>
+    <ClInclude Include="gameplay\Ui.h">
+      <Filter>Source\gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="graphics\bitmapclass.h">
-      <Filter>Source\graphics</Filter>
+    <ClInclude Include="gameplay\BallDetector.h">
+      <Filter>Source\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplay\Rule.h">
+      <Filter>Source\gameplay</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -291,9 +288,6 @@
     <ClCompile Include="gameplay\Table.cpp">
       <Filter>Source\gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="gameplay\Title.cpp">
-      <Filter>Source\gameplay</Filter>
-    </ClCompile>
     <ClCompile Include="gameplay\Ball.cpp">
       <Filter>Source\gameplay</Filter>
     </ClCompile>
@@ -318,11 +312,14 @@
     <ClCompile Include="gameplay\ScenePlay.cpp">
       <Filter>Source\gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="graphics\BitmapMapClass.cpp">
-      <Filter>Source\graphics</Filter>
+    <ClCompile Include="gameplay\Ui.cpp">
+      <Filter>Source\gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="graphics\bitmapclass.cpp">
-      <Filter>Source\graphics</Filter>
+    <ClCompile Include="gameplay\BallDetector.cpp">
+      <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplay\Rule.cpp">
+      <Filter>Source\gameplay</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -34,6 +34,9 @@ public:
 	void Render(ID3D11DeviceContext*);
 
 	int GetIndexCount();
+
+	// 加载ui模型
+	bool InitializeUi(ID3D11Device* , int , int , int , int);
 private:
 	bool InitializeBuffers(ID3D11Device*);
 	void ShutdownBuffers();
@@ -43,9 +46,12 @@ private:
 	bool LoadModel(char*);
 	void ReleaseModel();
 
+	// 加载与释放 ui
+	bool LoadUiModel(int, int, int, int);
 private:
 	ID3D11Buffer* m_vertexBuffer, *m_indexBuffer;
 	int m_vertexCount, m_indexCount;
 
+	// 用于加载数据
 	ModelType* m_model;
 };

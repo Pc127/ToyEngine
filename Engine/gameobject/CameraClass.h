@@ -28,6 +28,10 @@ public:
 	void GetOrthoMatrix(D3DXMATRIX&);
 	void SetOrthoMatrix(D3DXMATRIX&);
 
+	// ui的视图矩阵
+	void GetUiViewMatrix(D3DXMATRIX&);
+	void SetUiViewMatrix(D3DXMATRIX&);
+
 	// picking 射线
 	Ray GetPickingRay(int mouseX, int mouseY, int, int);
 private:
@@ -40,5 +44,7 @@ private:
 	D3DXMATRIX m_viewMatrix;
 	D3DXMATRIX m_projectionMatrix;
 	D3DXMATRIX m_orthoMatrix;
+	// UI的 视图矩阵
+	D3DXMATRIX m_uiViewMatrix;
 };
 

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #pragma comment(lib, "dxgi.lib")
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "d3dx11.lib")
@@ -38,6 +38,10 @@ public:
 
 	void TurnZBufferOn();
 	void TurnZBufferOff();
+
+	// 开启 关闭 混合
+	void TurnOnAlphaBlending();
+	void TurnOffAlphaBlending();
 private:
 	bool m_vsync_enabled;
 	int m_videoCardMemory;
@@ -54,5 +58,9 @@ private:
 	D3DXMATRIX m_worldMatrix;
 	D3DXMATRIX m_orthoMatrix;
 	ID3D11DepthStencilState* m_depthDisabledStencilState;
+
+	// 混合
+	ID3D11BlendState* m_alphaEnableBlendingState;
+	ID3D11BlendState* m_alphaDisableBlendingState;
 };
 

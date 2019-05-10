@@ -16,7 +16,7 @@ bool Stick::Initialize()
 	Register();
 
 	bool result;
-	this->type = 1;
+
 	m_GraphicsComponent = new GraphicsComponentClass;
 
 	m_GraphicsComponent->Initialize("../Engine/data/Stick.txt", L"../Engine/data/Stick.dds");
@@ -79,7 +79,7 @@ bool Stick::Frame()
 	D3DXQuaternionRotationAxis(&m_PhysicsComponent->m_orientation, &D3DXVECTOR3(0, 1, 0), angle);
 
 	if (InputClass::GetSingleton()->IsLeftMouseButtonDown()) {
-		ball->m_PhysicsComponent->m_velocity = direction * -10;
+		ball->m_PhysicsComponent->m_velocity = direction * -20;
 	}
 
 	return true;

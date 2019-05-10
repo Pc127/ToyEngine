@@ -121,6 +121,12 @@ bool SystemClass::Frame()
 {	
 	bool result = true;
 
+	// 更新游戏逻辑
+	result = m_SceneSystem->Frame();
+	if (!result) {
+		return false;
+	}
+
 	result = m_Input->Frame();
 	if (!result) {
 		return false;
@@ -138,12 +144,6 @@ bool SystemClass::Frame()
 
 	result = m_Graphics->Frame();
 	if (!result){
-		return false;
-	}
-
-	// 更新游戏逻辑
-	result = m_SceneSystem->Frame();
-	if (!result) {
 		return false;
 	}
 

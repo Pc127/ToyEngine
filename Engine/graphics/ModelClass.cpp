@@ -59,6 +59,28 @@ int ModelClass::GetIndexCount()
 	return m_indexCount;
 }
 
+// 加载一个ui model
+bool ModelClass::InitializeUi(ID3D11Device* device, int screenWidth, int screenHeight, int bitmapWidth, int bitmapHeight)
+{
+	bool result;
+
+	// 加载模型数据
+	result = LoadUiModel(screenWidth, screenHeight, bitmapWidth, bitmapHeight);
+	if (!result) {
+		return false;
+	}
+
+	// 初始化保存三角形几何的顶点和索引缓冲器
+	result = InitializeBuffers(device);
+	if (!result) {
+		return false;
+	}
+
+	return true;
+
+
+}
+
 
 bool ModelClass::InitializeBuffers(ID3D11Device *device)
 {
@@ -68,9 +90,6 @@ bool ModelClass::InitializeBuffers(ID3D11Device *device)
 	D3D11_SUBRESOURCE_DATA vertexData, indexData;
 
 	HRESULT result;
-
-	//m_vertexCount = 3;
-	//m_indexCount = 3;
 
 	vertices = new VertexType[m_vertexCount];
 
@@ -230,11 +249,6 @@ bool ModelClass::LoadModel(char *filename)
 
 	fin.close();
 
-	/*for (int i = 0; i < m_vertexCount / 2; i++) {
-		m_model[m_vertexCount / 2 + i] = m_model[i];
-		m_model[m_vertexCount / 2 + i].x += 3;
-	}*/
-
 	return true;
 }
 
@@ -245,4 +259,81 @@ void ModelClass::ReleaseModel()
 		m_model = 0;
 	}
 	return;
+}
+
+bool ModelClass::LoadUiModel(int screenWidth, int screenHeight, int bitmapWidth, int bitmapHeight)
+{
+	float left, right, top, bottom;
+	VertexType* vertices;
+	D3D11_MAPPED_SUBRESOURCE mappedResource;
+	VertexType* verticesPtr;
+	HRESULT result;
+
+
+	float positionX = 0;
+	float positionY = 0;
+
+	// 顶点数量为6
+	m_vertexCount = 6;
+
+	m_indexCount = m_vertexCount;
+
+	// 计算顶点坐标
+	left = (float)((screenWidth / 2) * -1) + (float)positionX;
+
+	right = left + (float)bitmapWidth;
+
+	top = (float)(screenHeight / 2) - (float)positionY;
+
+	bottom = top - (float)bitmapHeight;
+
+	// 更新顶点buffer
+	m_model = new ModelType[m_vertexCount];
+	if (!m_model)
+	{
+		return false;
+	}
+
+	// 第一个三角
+	m_model[0].x = left;
+	m_model[0].y = top;
+	m_model[0].z = 0.0f;
+	m_model[0].tu = 0.0f;
+	m_model[0].tv = 0.0f;
+
+	// Bottom right.
+	m_model[1].x = right;
+	m_model[1].y = bottom;
+	m_model[1].z = 0.0f;
+	m_model[1].tu = 1.0f;
+	m_model[1].tv = 1.0f;
+
+	// Bottom left.
+	m_model[2].x = left;
+	m_model[2].y = bottom;
+	m_model[2].z = 0.0f;
+	m_model[2].tu = 0.0f;
+	m_model[2].tv = 1.0f;
+
+	// 第二个三角
+	// Top left.
+	m_model[3].x = left;
+	m_model[3].y = top;
+	m_model[3].z = 0.0f;
+	m_model[3].tu = 0.0f;
+	m_model[3].tv = 0.0f;
+	
+	// Top right
+	m_model[4].x = right;
+	m_model[4].y = top;
+	m_model[4].z = 0.0f;
+	m_model[4].tu = 1.0f;
+	m_model[4].tv = 0.0f;
+
+	// Bottom right.
+	m_model[5].x = right;
+	m_model[5].y = bottom;
+	m_model[5].z = 0.0f;
+	m_model[5].tu = 1.0f;
+	m_model[5].tv = 1.0f;
 }

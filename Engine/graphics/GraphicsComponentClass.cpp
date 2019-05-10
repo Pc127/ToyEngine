@@ -4,6 +4,7 @@ GraphicsComponentClass::GraphicsComponentClass()
 {
 	m_Model = 0;
 	m_Texture = 0;
+	isUi = false;
 }
 
 bool GraphicsComponentClass::Initialize(char* modelname, WCHAR* texturename)
@@ -14,15 +15,6 @@ bool GraphicsComponentClass::Initialize(char* modelname, WCHAR* texturename)
 
 	return true;
 }
-
-bool GraphicsComponentClass::Initialize(bitmapStruct* bitmapname, WCHAR* texturename)
-{
-	m_Bitmap = BitmapMapClass::GetSingleton()->GetBitmap(bitmapname, texturename);
-	return false;
-}
-
-
-
 
 void GraphicsComponentClass::Shutdown()
 {
