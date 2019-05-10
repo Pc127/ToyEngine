@@ -78,8 +78,17 @@ bool Stick::Frame()
 	// 把角度转化为四元素的方向
 	D3DXQuaternionRotationAxis(&m_PhysicsComponent->m_orientation, &D3DXVECTOR3(0, 1, 0), angle);
 
+	static int count = 0;
+
 	if (InputClass::GetSingleton()->IsLeftMouseButtonDown()) {
-		ball->m_PhysicsComponent->m_velocity = direction * -20;
+		++count;
+	}
+	else {
+		float force = count*0.1;
+		if (force > 40)
+			force = 40;
+		ball->m_PhysicsComponent->m_velocity = direction * -force;
+		count = 0;
 	}
 
 	return true;
