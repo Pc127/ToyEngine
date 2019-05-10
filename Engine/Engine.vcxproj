@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ai\AiPlayer.h" />
     <ClInclude Include="gameobject\CameraClass.h" />
     <ClInclude Include="gameobject\GameObjectClass.h" />
     <ClInclude Include="gameobject\GameObjectListClass.h" />
@@ -69,6 +70,7 @@
     <ClInclude Include="system\TimerClass.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ai\AiPlayer.cpp" />
     <ClCompile Include="gameobject\CameraClass.cpp" />
     <ClCompile Include="gameobject\GameObjectClass.cpp" />
     <ClCompile Include="gameobject\GameObjectListClass.cpp" />
@@ -204,7 +206,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(ProjectDir)math;..\..\Engine\Engine\3DModel;..\..\Engine\Engine\gameplay;..\..\Engine\Engine\graphics;..\..\Engine\Engine\gameobject;..\..\Engine\Engine\system;..\..\Engine\Engine\physics;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\Engine\Engine\ai;$(ProjectDir)math;..\..\Engine\Engine\3DModel;..\..\Engine\Engine\gameplay;..\..\Engine\Engine\graphics;..\..\Engine\Engine\gameobject;..\..\Engine\Engine\system;..\..\Engine\Engine\physics;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

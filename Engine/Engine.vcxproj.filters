@@ -29,6 +29,9 @@
     <Filter Include="Resource\shader">
       <UniqueIdentifier>{7998a311-dd0e-4cde-bf86-74b855ca2eaa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\ai">
+      <UniqueIdentifier>{c505de84-eb6b-4628-ac83-4b6ecec71dfe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="system\SystemClass.h">
@@ -175,6 +178,9 @@
     <ClInclude Include="gameplay\Rule.h">
       <Filter>Source\gameplay</Filter>
     </ClInclude>
+    <ClInclude Include="ai\AiPlayer.h">
+      <Filter>Source\ai</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="system\SystemClass.cpp">
@@ -320,6 +326,9 @@
     </ClCompile>
     <ClCompile Include="gameplay\Rule.cpp">
       <Filter>Source\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\AiPlayer.cpp">
+      <Filter>Source\ai</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
