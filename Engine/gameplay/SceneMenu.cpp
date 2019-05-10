@@ -10,7 +10,6 @@ SceneMenu::~SceneMenu()
 
 bool SceneMenu::Initialize()
 {
-
 	return true;
 	
 }

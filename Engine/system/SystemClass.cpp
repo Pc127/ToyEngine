@@ -55,12 +55,10 @@ bool SystemClass::Initialize()
 	m_SceneSystem = GameSceneSystemClass::GetSingleton();
 	
 	//初始化场景
-/*	m_SceneSystem->SetScene("Meun", new SceneMenu);
-	m_SceneSystem->Initialize("Meun");
 
-	*/m_SceneSystem->SetScene("Play", new SceneOne);
+	m_SceneSystem->SetScene("Play", new SceneOne);
 	m_SceneSystem->Initialize("Play");
-
+	
 	return true;
 }
 
