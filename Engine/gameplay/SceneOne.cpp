@@ -74,6 +74,7 @@ bool SceneOne::Initialize()
 	auto ball08 = new Ball(L"../Engine/data/Ball8.dds");
 	m_SceneObject.push_back(ball08);
 	m_SceneObject[9]->Initialize();
+	ball08->active = true;
 	m_SceneObject[9]->m_PhysicsComponent->m_position = D3DXVECTOR3(0, 0, 35);
 
 	//11
@@ -110,7 +111,7 @@ bool SceneOne::Initialize()
 	auto whiteBall = new Ball(L"../Engine/data/Ball16.dds");
 	m_SceneObject.push_back(whiteBall);
 	m_SceneObject[15]->Initialize();
-	m_SceneObject[15]->m_PhysicsComponent->m_position = D3DXVECTOR3(0, 0, 30);
+	m_SceneObject[15]->m_PhysicsComponent->m_position = D3DXVECTOR3(0, 0, 0);
 	m_SceneObject[15]->m_PhysicsComponent->m_velocity = D3DXVECTOR3(0, 0, 0);
 
 	// 桌子
@@ -196,7 +197,7 @@ bool SceneOne::Initialize()
 	m_SceneObject[33]->Initialize();
 	m_SceneObject[33]->m_PhysicsComponent->m_position = D3DXVECTOR3(0, -50, 0);
 
-	auto player2 = new Ui("player1", L"../Engine/data/Player2.dds", 100, 100);
+	auto player2 = new Ui("player2", L"../Engine/data/Player2.dds", 100, 100);
 	m_SceneObject.push_back(player2);
 	m_SceneObject[34]->Initialize();
 	m_SceneObject[34]->m_PhysicsComponent->m_position = D3DXVECTOR3(200, -50, 0);

@@ -80,6 +80,7 @@ bool Rule::Frame()
 		if (!initialBallerOwnner) {
 			ChangePlayer();
 			Winner();
+			return true;
 		}
 
 		// 检查是否获胜

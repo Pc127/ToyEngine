@@ -5,7 +5,7 @@ BallDetector::BallDetector(initializer_list<GameObjectClass*> il)
 	// 保存到数组
 	for (auto ball : il) {
 		m_balls.push_back(ball);
-		m_state.push_back(true);
+		m_state.push_back(ball->active);
 	}
 }
 
