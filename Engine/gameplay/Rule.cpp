@@ -65,16 +65,6 @@ bool Rule::Frame()
 	}
 
 	// 判定状态
-	// 白球进了
-	if (whiteBall->active == false) {
-		ChangePlayer();
-		// 重新置球
-		whiteBall->m_PhysicsComponent->m_position = D3DXVECTOR3(0, 0, 0);
-		whiteBall->m_PhysicsComponent->m_velocity = D3DXVECTOR3(0, 0, 0);
-		whiteBall->active = true;
-		return true;
-	}
-
 	// 黑球进了
 	if (blackBall->active == false) {
 		if (!initialBallerOwnner) {
@@ -91,7 +81,7 @@ bool Rule::Frame()
 				Winner();
 				return true;
 			}
-			
+
 		}
 		else {
 			if (smallBalls->IsBallAllIn()) {
@@ -103,6 +93,16 @@ bool Rule::Frame()
 		// 没有获胜的话 默认情况 还是对方赢了
 		ChangePlayer();
 		Winner();
+		return true;
+	}
+
+	// 白球进了
+	if (whiteBall->active == false) {
+		ChangePlayer();
+		// 重新置球
+		whiteBall->m_PhysicsComponent->m_position = D3DXVECTOR3(0, 0, 0);
+		whiteBall->m_PhysicsComponent->m_velocity = D3DXVECTOR3(0, 0, 0);
+		whiteBall->active = true;
 		return true;
 	}
 
@@ -190,4 +190,3 @@ void Rule::EndGame()
 	monitor->subline->active = false;
 	monitor->active = false;
 }
-
